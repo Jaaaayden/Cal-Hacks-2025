@@ -8,8 +8,7 @@ import { UnrealBloomPass } from "https://esm.sh/three@0.169.0/examples/jsm/postp
 
 // --- Global Variables ---
 let renderer, camera, controls, scene, composer;
-let wordToVisualizedNode = {};
-let circleMeshToWord = {};
+let circleMeshToWord = new Map();
 // --- Get HTML Elements ---
 const loadingOverlay = document.getElementById('loading-overlay');
 const sceneContainer = document.getElementById('scene-container');
@@ -275,6 +274,15 @@ function checkIntersects(onClick) {
 
     if (onClick) {
       // Handle click
+      const word = circleMeshToWord.get(firstObject);
+      console.log('Clicked object:', word);
+      if (word) {
+        const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(word)}`;
+        console.log('Opening Wikipedia page for: ${word}');
+        window.open(wikiUrl, '_blank');
+      } else {
+        console.log('Clicked object has no associated word:', firstObject.name || firstObject);
+      }
       console.log('Clicked on:', firstObject.name || firstObject);
     } else {
       // Handle hover
@@ -508,8 +516,7 @@ class VisualizedWordNode {
     // Use the main circle mesh as the interactive object
     this.sphere = circleMesh;
     NodesList.push(this.sphere); // Add to global NodesList for interaction
-    wordToVisualizedNode[word] = this;
-    circleMeshToWord[circleMesh] = word;
+    circleMeshToWord.set(this.sphere, word);
     
     this._scene = scene;
   }
