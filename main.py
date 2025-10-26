@@ -120,7 +120,7 @@ def build_relatedness_tree(
 if __name__ == "__main__":
     node_counter = {"count": 1}
     tree = build_relatedness_tree(wv, 'pokemon', depth=4, branch_factor=5, node_counter=node_counter)
-
+    
     with open("word_tree.json", "w", encoding="utf-8") as f:
         json.dump(tree, f, indent=2, ensure_ascii=False)
 
