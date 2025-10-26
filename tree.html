@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+    <!-- Link to the shared stylesheet -->
+    <link rel="stylesheet" href="style.css"> 
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading screen overlay - Initially VISIBLE on this page -->
+    <div id="loading-overlay"> 
+        <div class="spinner"></div>
+        <p>Generating Tree...</p>
+    </div>
+
+    <!-- Container for the 3D scene (starts empty and hidden) -->
+    <div id="scene-container" class="hidden fullscreen"> 
+        <!-- The Three.js canvas will be added here by the script -->
+    </div>
+
+    <!-- Link THREE.js library and the specific script for this page -->
+    <!-- Important: type="module" is needed for THREE.js imports -->
+    <script type="module" src="tree-script.js"></script> 
+</body>
+</html>
