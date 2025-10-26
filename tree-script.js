@@ -1,8 +1,13 @@
-import * as THREE from 'https://esm.sh/three@0.152.2';
-import { OrbitControls } from 'https://esm.sh/three@0.152.2/examples/jsm/controls/OrbitControls.js';
+import * as THREE from "https://esm.sh/three@0.169.0";
+
+import { OrbitControls } from "https://esm.sh/three@0.169.0/examples/jsm/controls/OrbitControls.js?deps=three@0.169.0";
+import { EffectComposer } from "https://esm.sh/three@0.169.0/examples/jsm/postprocessing/EffectComposer.js?deps=three@0.169.0";
+import { RenderPass } from "https://esm.sh/three@0.169.0/examples/jsm/postprocessing/RenderPass.js?deps=three@0.169.0";
+import { UnrealBloomPass } from "https://esm.sh/three@0.169.0/examples/jsm/postprocessing/UnrealBloomPass.js?deps=three@0.169.0";
 
 // --- Global Variables ---
-let renderer, camera, controls, scene;
+// ... (rest of globals) ...
+let renderer, camera, controls, scene, composer;
 
 // --- Get HTML Elements ---
 const loadingOverlay = document.getElementById('loading-overlay');
@@ -51,6 +56,45 @@ const MIN_GLOBAL_DIST_SQ = MIN_GLOBAL_DIST * MIN_GLOBAL_DIST;
 const GLOBAL_INDEX = new SpatialHash(MIN_GLOBAL_DIST);
 
 // --- Main Execution ---
+//materials
+
+const neonOutlineMaterial = new THREE.ShaderMaterial({
+  uniforms: {
+    color: { value: new THREE.Color(0x00ff66) },
+    opacity: { value: 0.8 },
+  },
+  vertexShader: `
+    varying vec3 vNormal;
+    varying vec3 vViewDir;
+    void main() {
+      vNormal = normalize(normalMatrix * normal);
+      vec4 worldPos = modelMatrix * vec4(position, 1.0);
+      vViewDir = normalize(cameraPosition - worldPos.xyz);
+      gl_Position = projectionMatrix * viewMatrix * worldPos;
+    }
+  `,
+  fragmentShader: `
+    varying vec3 vNormal;
+    varying vec3 vViewDir;
+    uniform vec3 color;
+    uniform float opacity;
+
+    void main() {
+      // Strengthen color at grazing angles (edges)
+      float edge = 1.0 - abs(dot(vNormal, vViewDir));
+      edge = pow(edge, 3.0); // Sharpen edge falloff
+      vec3 glow = color * edge * 2.0;
+      gl_FragColor = vec4(glow, edge * opacity);
+    }
+  `,
+  transparent: true,
+  blending: THREE.AdditiveBlending,
+  depthWrite: false,
+  side: THREE.BackSide, // render inside surface, gives hollow look
+});
+
+
+// ... (rest of main execution logic) ...
 document.addEventListener('DOMContentLoaded', async () => {
   const urlParams = new URLSearchParams(window.location.search);
   const word = urlParams.get('word') || 'sample';
@@ -109,6 +153,10 @@ function initTree(treeData) {
     const oldCanvas = sceneContainer.querySelector('canvas');
     if (oldCanvas) sceneContainer.removeChild(oldCanvas);
 
+        scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x121212);
+        camera = new THREE.PerspectiveCamera(50, 2, 0.1, 1000);
+        camera.position.set(0, 5, 30);
     scene = new THREE.Scene();
     scene.background = new THREE.Color(0x121212);
     camera = new THREE.PerspectiveCamera(50, 2, 0.1, 1000); // temp aspect
@@ -118,11 +166,22 @@ function initTree(treeData) {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
     sceneContainer.appendChild(renderer.domElement);
 
-    const ambient = new THREE.AmbientLight(0xffffff, 0.8);
-    scene.add(ambient);
-    const dir = new THREE.DirectionalLight(0xffffff, 1);
-    dir.position.set(5, 10, 5);
-    scene.add(dir);
+        const ambient = new THREE.AmbientLight(0xffffff, 0.8);
+        scene.add(ambient);
+        const dir = new THREE.DirectionalLight(0xffffff, 1);
+        dir.position.set(5, 10, 5);
+        scene.add(dir);
+
+        // --- FIXED: use global composer ---
+        composer = new EffectComposer(renderer);
+        composer.addPass(new RenderPass(scene, camera));
+        const bloomPass = new UnrealBloomPass(
+            new THREE.Vector2(window.innerWidth, window.innerHeight),
+            0.9, // strength
+            0.7, // radius
+            0.1  // threshold
+        );
+        composer.addPass(bloomPass);
 
     controls = new OrbitControls(camera, renderer.domElement);
     controls.enableDamping = true;
@@ -133,30 +192,26 @@ function initTree(treeData) {
 
     sceneContainer.classList.remove('hidden');
 
-    requestAnimationFrame(() => {
-      const w = Math.max(1, sceneContainer.clientWidth || Math.floor(window.innerWidth * 0.75));
-      const h = Math.max(1, sceneContainer.clientHeight || Math.floor(window.innerHeight * 0.75));
+        // --- Start animation loop only after composer is ready ---
+        const w = Math.max(1, sceneContainer.clientWidth || Math.floor(window.innerWidth * 0.75));
+        const h = Math.max(1, sceneContainer.clientHeight || Math.floor(window.innerHeight * 0.75));
+        camera.aspect = w / h;
+        camera.updateProjectionMatrix();
+        renderer.setSize(w, h, false);
+        controls.update();
 
-      camera.aspect = w / h;
-      camera.updateProjectionMatrix();
-      renderer.setSize(w, h, false);
-      controls.update();
+        if (loadingOverlay) loadingOverlay.classList.add('hidden');
 
-      if (loadingOverlay) loadingOverlay.classList.add('hidden');
-
-      requestAnimationFrame(() => { if(renderer) renderer.render(scene, camera) });
-      setTimeout(() => { if (renderer) renderer.render(scene, camera); }, 60);
-
-      animate();
-    });
-
-  } catch (err) {
-    console.error('Failed to initialize three.js scene:', err);
-    sceneContainer.innerHTML = `<p style="color: red; padding: 20px;">Error initializing 3D view: ${err.message}</p>`;
-    sceneContainer.classList.remove('hidden');
-    if (loadingOverlay) loadingOverlay.classList.add('hidden');
-  }
+        animate(); // now composer is ready
+    } catch (err) {
+        console.error('Failed to initialize three.js scene:', err);
+        sceneContainer.innerHTML = `<p style="color: red; padding: 20px;">Error initializing 3D view: ${err.message}</p>`;
+        sceneContainer.classList.remove('hidden');
+        if (loadingOverlay) loadingOverlay.classList.add('hidden');
+    }
 }
+
+
 
 // --- Handle window resizing ---
 window.addEventListener('resize', () => {
@@ -173,10 +228,19 @@ window.addEventListener('resize', () => {
 
 // --- Animation loop ---
 function animate() {
-  if (!renderer || !scene || !camera || !controls) return;
-  requestAnimationFrame(animate);
-  controls.update();
-  renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+
+    if (controls) controls.update();
+
+    // --- Step 1: Render bloom only for objects tagged with bloom ---
+    scene.traverse(obj => {
+        obj.visible = obj.userData.bloom === true;
+    });
+    composer.render();
+
+    // --- Step 2: Render full scene normally ---
+    scene.traverse(obj => obj.visible = true);
+    renderer.render(scene, camera);
 }
 
 // --- RENDER TREE ---
@@ -256,34 +320,99 @@ function roundRect(ctx, x, y, w, h, r) {
 }
 
 class VisualizedWordNode {
-  constructor(word, scene, position = [0, 0, 0]) {
-    this.word = word;
-    this.position = position;
+    constructor(word, scene, position = [0, 0, 0]) {
+        this.word = word;
+        this.position = position;
 
-    const geo = new THREE.SphereGeometry(0.3, 16, 16);
-    const mat = new THREE.MeshStandardMaterial({ color: 0x0088ff, metalness: 0.2, roughness: 0.4 });
-    this.sphere = new THREE.Mesh(geo, mat);
-    this.sphere.position.set(...position);
-    scene.add(this.sphere);
+        const outerRadius = 0.35;   // neon ring outer radius
+        const innerRadius = 0.30;   // neon ring inner radius (thin)
+        const segments = 64;
 
-    // Register globally for collision checks
-    GLOBAL_INDEX.add(position);
+        // --- Interior circle (dark green center) ---
+        const circleGeo = new THREE.CircleGeometry(innerRadius, segments);
+        const circleMat = new THREE.MeshBasicMaterial({
+            color: 0x003300,       // dark green
+            side: THREE.DoubleSide,
+            transparent: false,    // fully opaque
+            depthWrite: true
+        });
+        const circleMesh = new THREE.Mesh(circleGeo, circleMat);
+        circleMesh.position.set(...position);
+        circleMesh.renderOrder = 0;
+        circleMesh.onBeforeRender = (renderer, scene, camera) => {
+            circleMesh.quaternion.copy(camera.quaternion);
+        };
+        scene.add(circleMesh);
 
-    this.label = createTextSprite(word);
-    this.label.position.set(position[0], position[1] + 0.7, position[2]);
-    scene.add(this.label);
-    this._scene = scene;
-  }
+        // --- Thin neon ring (no additive blending) ---
+        const ringGeo = new THREE.RingGeometry(innerRadius, outerRadius, segments);
+        const ringMat = new THREE.MeshBasicMaterial({
+            color: 0x00ff66,       // neon green
+            side: THREE.DoubleSide,
+            transparent: true,
+            opacity: 0.8            // controls glow intensity
+        });
+        const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+        ringMesh.position.set(...position);
+        ringMesh.renderOrder = 1;
+        ringMesh.onBeforeRender = (renderer, scene, camera) => {
+            ringMesh.quaternion.copy(camera.quaternion);
+        };
+        scene.add(ringMesh);
+
+        // --- Outer subtle glow (additive blending) ---
+        const glowGeo = new THREE.RingGeometry(outerRadius, outerRadius + 0.05, segments);
+        const glowMat = new THREE.MeshBasicMaterial({
+            color: 0x00ff66,
+            side: THREE.DoubleSide,
+            transparent: true,
+            blending: THREE.AdditiveBlending,
+            opacity: 0.3
+        });
+        const glowMesh = new THREE.Mesh(glowGeo, glowMat);
+        glowMesh.position.set(...position);
+        glowMesh.renderOrder = 2;
+        glowMesh.onBeforeRender = (renderer, scene, camera) => {
+            glowMesh.quaternion.copy(camera.quaternion);
+        };
+        scene.add(glowMesh);
+
+        // --- Text label ---
+        this.label = createTextSprite(word, { fontSize: 32, scale: 0.0006 });
+        this.label.position.set(position[0], position[1] + 0.8, position[2]);
+        scene.add(this.label);
+    }
 }
 
 class VisualizedBranch {
-  constructor(startPos, endPos, scene) {
-    const points = [new THREE.Vector3(...startPos), new THREE.Vector3(...endPos)];
-    const geometry = new THREE.BufferGeometry().setFromPoints(points);
-    const material = new THREE.LineBasicMaterial({ color: 0xaaaaaa, transparent: true, opacity: 0.6 });
-    const line = new THREE.Line(geometry, material);
-    scene.add(line);
-  }
+    constructor(startPos, endPos, scene) {
+        const points = [
+            new THREE.Vector3(...startPos),
+            new THREE.Vector3(...endPos)
+        ];
+
+        const geometry = new THREE.BufferGeometry().setFromPoints(points);
+
+        // --- Core branch: slightly darker solid brown ---
+        const coreMat = new THREE.LineBasicMaterial({
+            color: 0x3E2616, // slightly darker wood brown
+            transparent: true,
+            opacity: 1.0
+        });
+        const coreLine = new THREE.Line(geometry, coreMat);
+        scene.add(coreLine);
+
+        // --- Glow branch: slightly darker additive glow ---
+        const glowMat = new THREE.LineBasicMaterial({
+            color: 0x3E2616, // match darker brown
+            transparent: true,
+            opacity: 0.8, 
+            blending: THREE.AdditiveBlending
+        });
+        const glowLine = new THREE.Line(geometry.clone(), glowMat);
+        glowLine.userData.bloom = true;    // tag for UnrealBloomPass
+        scene.add(glowLine);
+    }
 }
 
 // --- POSITION GENERATOR (with sibling + global spacing) ---

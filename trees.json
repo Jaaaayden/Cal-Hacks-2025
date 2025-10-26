@@ -1,81 +1,89 @@
 {
-  "word": "apple",
+  "word": "dih",
   "children": [
     {
-      "word": "iphone",
+      "word": "kuh",
       "children": [
         {
-          "word": "ipad",
+          "word": "kah",
           "children": [
             {
-              "word": "kindle",
+              "word": "tah",
               "children": []
             },
             {
-              "word": "app",
+              "word": "keh",
               "children": []
             },
             {
-              "word": "mac",
+              "word": "loh",
               "children": []
             },
             {
-              "word": "tablet",
+              "word": "sah",
               "children": []
             }
           ]
         },
         {
-          "word": "ipod",
+          "word": "guh",
           "children": [
             {
-              "word": "zunes",
+              "word": "yuh",
               "children": []
             },
             {
-              "word": "samsung",
+              "word": "gah",
               "children": []
             },
             {
-              "word": "htc",
+              "word": "fuh",
               "children": []
             },
             {
-              "word": "osx",
+              "word": "muh",
               "children": []
             }
           ]
         },
         {
-          "word": "android",
+          "word": "puh",
           "children": [
             {
-              "word": "verizon",
+              "word": "noo",
               "children": []
             },
             {
-              "word": "untethered",
+              "word": "pah",
               "children": []
             },
             {
-              "word": "blackberrying",
+              "word": "yuk",
               "children": []
             },
             {
-              "word": "unlocked",
+              "word": "kum",
               "children": []
             }
           ]
         },
         {
-          "word": "jailbreak",
+          "word": "kee",
           "children": [
             {
-              "word": "AppleJack",
+              "word": "toh",
               "children": []
             },
             {
-              "word": "ipa",
+              "word": "yee",
+              "children": []
+            },
+            {
+              "word": "kon",
+              "children": []
+            },
+            {
+              "word": "luh",
               "children": []
             }
           ]
@@ -83,88 +91,88 @@
       ]
     },
     {
-      "word": "blueberry",
+      "word": "suh",
       "children": [
         {
-          "word": "raspberry",
+          "word": "hae",
           "children": [
             {
-              "word": "strawberry",
+              "word": "ony",
               "children": []
             },
             {
-              "word": "blackcurrant",
+              "word": "gae",
               "children": []
             },
             {
-              "word": "apricot",
+              "word": "yur",
               "children": []
             },
             {
-              "word": "plum",
+              "word": "nae",
               "children": []
             }
           ]
         },
         {
-          "word": "currant",
+          "word": "cah",
           "children": [
             {
-              "word": "boysenberry",
+              "word": "yal",
               "children": []
             },
             {
-              "word": "elderberry",
+              "word": "tme",
               "children": []
             },
             {
-              "word": "nectarine",
+              "word": "ane",
               "children": []
             },
             {
-              "word": "cherry",
+              "word": "sey",
               "children": []
             }
           ]
         },
         {
-          "word": "rhubarb",
+          "word": "beng",
           "children": [
             {
-              "word": "compote",
+              "word": "peng",
               "children": []
             },
             {
-              "word": "celeriac",
+              "word": "hahs",
               "children": []
             },
             {
-              "word": "beetroot",
+              "word": "pek",
               "children": []
             },
             {
-              "word": "broccoli",
+              "word": "okies",
               "children": []
             }
           ]
         },
         {
-          "word": "peach",
+          "word": "wuh",
           "children": [
             {
-              "word": "tangerine",
+              "word": "oww",
               "children": []
             },
             {
-              "word": "lychee",
+              "word": "LOl",
               "children": []
             },
             {
-              "word": "watermelon",
+              "word": "urr",
               "children": []
             },
             {
-              "word": "guava",
+              "word": "whu",
               "children": []
             }
           ]
@@ -172,88 +180,88 @@
       ]
     },
     {
-      "word": "pear",
+      "word": "tuh",
       "children": [
         {
-          "word": "mango",
+          "word": "gak",
           "children": [
             {
-              "word": "papaya",
+              "word": "aku",
               "children": []
             },
             {
-              "word": "tamarind",
+              "word": "akan",
               "children": []
             },
             {
-              "word": "avocado",
+              "word": "tgk",
               "children": []
             },
             {
-              "word": "coconut",
+              "word": "aja",
               "children": []
             }
           ]
         },
         {
-          "word": "melon",
+          "word": "tuu",
           "children": [
             {
-              "word": "cantaloupe",
+              "word": "wae",
               "children": []
             },
             {
-              "word": "cucumber",
+              "word": "bby",
               "children": []
             },
             {
-              "word": "kiwi",
+              "word": "baq",
               "children": []
             },
             {
-              "word": "persimmon",
+              "word": "liaos",
               "children": []
             }
           ]
         },
         {
-          "word": "pomegranate",
+          "word": "deh",
           "children": [
             {
-              "word": "berry",
+              "word": "seh",
               "children": []
             },
             {
-              "word": "grapefruit",
+              "word": "pon",
               "children": []
             },
             {
-              "word": "sunflower",
+              "word": "mek",
               "children": []
             },
             {
-              "word": "kumquat",
+              "word": "weh",
               "children": []
             }
           ]
         },
         {
-          "word": "pineapple",
+          "word": "lah",
           "children": [
             {
-              "word": "banana",
+              "word": "leh",
               "children": []
             },
             {
-              "word": "lemon",
+              "word": "laa",
               "children": []
             },
             {
-              "word": "maraschino",
+              "word": "anw",
               "children": []
             },
             {
-              "word": "lime",
+              "word": "arh",
               "children": []
             }
           ]
@@ -261,84 +269,88 @@
       ]
     },
     {
-      "word": "blackberry",
+      "word": "nuh",
       "children": [
         {
-          "word": "hackberry",
+          "word": "nah",
           "children": [
             {
-              "word": "whortleberry",
+              "word": "naw",
               "children": []
             },
             {
-              "word": "juneberry",
+              "word": "yah",
               "children": []
             },
             {
-              "word": "partridgeberry",
+              "word": "ehh",
               "children": []
             },
             {
-              "word": "bitternut",
+              "word": "uhm",
               "children": []
             }
           ]
         },
         {
-          "word": "inkberry",
+          "word": "dey",
           "children": [
             {
-              "word": "snapple",
+              "word": "itz",
               "children": []
             },
             {
-              "word": "cherimoya",
+              "word": "lik",
               "children": []
             },
             {
-              "word": "starfruit",
+              "word": "wey",
               "children": []
             },
             {
-              "word": "cumquat",
+              "word": "wun",
               "children": []
             }
           ]
         },
         {
-          "word": "acer",
+          "word": "wuk",
           "children": [
             {
-              "word": "laptop",
+              "word": "duu",
               "children": []
             },
             {
-              "word": "ibm",
+              "word": "kuz",
               "children": []
             },
             {
-              "word": "intel",
+              "word": "qet",
+              "children": []
+            },
+            {
+              "word": "ahn",
               "children": []
             }
           ]
         },
         {
-          "word": "loganberry",
+          "word": "duh",
           "children": [
             {
-              "word": "lingonberry",
+              "word": "dah",
               "children": []
             },
             {
-              "word": "gooseberry",
+              "word": "buh",
               "children": []
             },
             {
-              "word": "pawpaws",
+              "word": "dum",
               "children": []
             },
             {
-              "word": "cranberrys",
+              "word": "ryt",
               "children": []
             }
           ]
