@@ -28,7 +28,7 @@ https://wormhole.app/6Yjld3#_RVFb2UzWscjAIYbR0h6UQ
 
 - Balancing semantic weighting between nodes (to avoid random or overly repetitive branches).
 
-= Cleaning unfiltered datasets for stable, human-readable output.
+- Cleaning unfiltered datasets for stable, human-readable output.
 
 # What's next
 
