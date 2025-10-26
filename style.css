@@ -30,7 +30,8 @@ body, html {
 .title {
     font-size: 4rem; 
     font-weight: 700;
-    background: -webkit-linear-gradient(45deg, #4f80c8, #9747ff);
+    /* CHANGED: Switched to a green gradient */
+    background: -webkit-linear-gradient(45deg, #66BB6A, #2E7D32);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-bottom: 1rem;
@@ -59,8 +60,8 @@ body, html {
     transition: all 0.2s ease-in-out;
 }
 #word-input:focus {
-    border-color: #9747ff;
-    box-shadow: 0 0 15px rgba(151, 71, 255, 0.3);
+    border-color: #654321; /* CHANGED: Darker brown border color */
+    box-shadow: 0 0 15px rgba(101, 67, 33, 0.4); /* CHANGED: Darker brown glow with slightly more opacity */
 }
 
 /* === LOADING SCREEN STYLES (Used on both pages, initially shown on tree.html) === */
@@ -91,7 +92,7 @@ body, html {
     width: 50px;
     height: 50px;
     border: 5px solid #444; 
-    border-top: 5px solid #9747ff; 
+    border-top: 5px solid #00c545; 
     border-radius: 50%;
     animation: spin 1s linear infinite;
     margin-bottom: 1rem;
