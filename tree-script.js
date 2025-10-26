@@ -170,9 +170,11 @@ function initTree(treeData) {
     camera.position.set(0, 5, 30);
 
     // renderer
-        renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-        sceneContainer.appendChild(renderer.domElement);
+    renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
+    // IMPORTANT: allow object sorting (keeps transparent/alpha draw order sane)
+    renderer.sortObjects = true;
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    sceneContainer.appendChild(renderer.domElement);
 
     // lights
     const ambient = new THREE.AmbientLight(0xffffff, 0.8);
@@ -201,7 +203,7 @@ function initTree(treeData) {
     // build the tree
     renderTree(treeData, scene);
 
-        sceneContainer.classList.remove('hidden');
+    sceneContainer.classList.remove('hidden');
 
     // Initialize mouse and ray casting
     function animate() {
@@ -278,7 +280,7 @@ function checkIntersects(onClick) {
       console.log('Clicked object:', word);
       if (word) {
         const wikiUrl = `https://en.wikipedia.org/wiki/${encodeURIComponent(word)}`;
-        console.log('Opening Wikipedia page for: ${word}');
+        console.log(`Opening Wikipedia page for: ${word}`);
         window.open(wikiUrl, '_blank');
       } else {
         console.log('Clicked object has no associated word:', firstObject.name || firstObject);
@@ -420,17 +422,25 @@ function createTextSprite(text, opts = {}) {
   texture.minFilter = THREE.LinearFilter;
   texture.needsUpdate = true;
 
+  // Important: depthTest true so sprites can be occluded by meshes,
+  // depthWrite false so they don't write into the depth buffer.
+  // alphaTest discards nearly-transparent pixels (helps occlusion).
   const material = new THREE.SpriteMaterial({
     map: texture,
     transparent: true,
-    depthTest: false,
-    sizeAttenuation: false
+    depthTest: true,
+    depthWrite: false,
+    sizeAttenuation: false,
+    alphaTest: 0.05
   });
 
   const sprite = new THREE.Sprite(material);
   const scaleFactor = opts.scale || 0.0005;
   sprite.scale.set(canvas.width * scaleFactor, canvas.height * scaleFactor, 1);
   sprite.userData.canvasTexture = texture;
+
+  // Default renderOrder is 0. We'll set a higher renderOrder for labels
+  // in VisualizedWordNode to ensure nodes (renderOrder 0..2) get rendered earlier.
   return sprite;
 }
 
@@ -465,10 +475,12 @@ class VisualizedWordNode {
       emissiveIntensity: 1.0,
       side: THREE.DoubleSide,
       transparent: false,
-      depthWrite: true
+      depthWrite: true,
+      depthTest: true
     });
     const circleMesh = new THREE.Mesh(circleGeo, circleMat);
     circleMesh.position.set(...position);
+    // ensure nodes render before labels (safety)
     circleMesh.renderOrder = 0;
     circleMesh.onBeforeRender = (renderer, scene, camera) => {
       circleMesh.quaternion.copy(camera.quaternion);
@@ -481,6 +493,8 @@ class VisualizedWordNode {
       color: 0x00ff66,       // neon green
       side: THREE.DoubleSide,
       transparent: true,
+      depthWrite: true,
+      depthTest: true,
       opacity: 0.8            // controls glow intensity
     });
     const ringMesh = new THREE.Mesh(ringGeo, ringMat);
@@ -497,6 +511,8 @@ class VisualizedWordNode {
       color: 0x00ff66,
       side: THREE.DoubleSide,
       transparent: true,
+      depthWrite: true,
+      depthTest: true,
       blending: THREE.AdditiveBlending,
       opacity: 0.3
     });
@@ -511,13 +527,24 @@ class VisualizedWordNode {
     // --- Text label ---
     this.label = createTextSprite(word, { fontSize: 18, scale: 0.0006 });
     this.label.position.set(position[0], position[1] + 0.8, position[2]);
+
+    // Make sure label can be occluded by meshes:
+    // (material already created with depthTest=true; double-check here)
+    if (this.label.material) {
+      this.label.material.depthTest = true;
+      this.label.material.depthWrite = false;
+      this.label.material.alphaTest = 0.05; // discard faint alpha, helps occlusion
+    }
+    // Put labels at a higher renderOrder than the node meshes (nodes: 0..2)
+    this.label.renderOrder = 3;
+
     scene.add(this.label);
 
     // Use the main circle mesh as the interactive object
     this.sphere = circleMesh;
     NodesList.push(this.sphere); // Add to global NodesList for interaction
     circleMeshToWord.set(this.sphere, word);
-    
+
     this._scene = scene;
   }
 }
@@ -528,30 +555,40 @@ class VisualizedBranch {
       new THREE.Vector3(...startPos),
       new THREE.Vector3(...endPos)
     ];
-
     const geometry = new THREE.BufferGeometry().setFromPoints(points);
 
-    // --- Core branch: slightly darker solid brown ---
+    // Core
     const coreMat = new THREE.LineBasicMaterial({
-      color: 0x3E2616, // slightly darker wood brown
-      transparent: true,
-      opacity: 1.0
+      color: 0x3E2616
     });
     const coreLine = new THREE.Line(geometry, coreMat);
     scene.add(coreLine);
 
-    // --- Glow branch: slightly darker additive glow ---
+    // Glow
     const glowMat = new THREE.LineBasicMaterial({
-      color: 0x3E2616, // match darker brown
+      color: 0x3E2616,
       transparent: true,
-      opacity: 0.8,
-      blending: THREE.AdditiveBlending
+      opacity: 1.0,
+      blending: THREE.AdditiveBlending,
+      depthWrite: false,
+      depthTest: false // prevents flicker
     });
+
     const glowLine = new THREE.Line(geometry.clone(), glowMat);
-    glowLine.userData.bloom = true;    // tag for UnrealBloomPass
+    glowLine.userData.bloom = true;
+
+    // tiny offset to separate from core line
+    const offset = new THREE.Vector3();
+    offset.copy(points[1]).sub(points[0]).normalize().multiplyScalar(0.0001);
+    glowLine.position.add(offset);
+
     scene.add(glowLine);
+
+    this.core = coreLine;
+    this.glow = glowLine;
   }
 }
+
 
 // --- POSITION GENERATOR (with sibling + global spacing) ---
 function* generateNextPosition(parentPos, grandparentPos, parentDepth, totalChildren) {
