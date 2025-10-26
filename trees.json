@@ -1,7 +1,8 @@
 {
-  "word": "dih",
+  "word": "test",
   "children": [
     {
+<<<<<<< Updated upstream
       "word": "algebra",
       "children": [
         {
@@ -21,11 +22,33 @@
             },
             {
               "word": "linguistics",
+=======
+      "word": "exam",
+      "children": [
+        {
+          "word": "dumps",
+          "children": [
+            {
+              "word": "offerS",
+              "children": []
+            },
+            {
+              "word": "answers",
+              "children": []
+            },
+            {
+              "word": "Retests",
+              "children": []
+            },
+            {
+              "word": "simulations",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "trigonometric",
           "children": [
             {
@@ -42,11 +65,30 @@
             },
             {
               "word": "logarithms",
+=======
+          "word": "certification",
+          "children": [
+            {
+              "word": "certificating",
+              "children": []
+            },
+            {
+              "word": "certificate",
+              "children": []
+            },
+            {
+              "word": "training",
+              "children": []
+            },
+            {
+              "word": "proctored",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "quadratic",
           "children": [
             {
@@ -63,11 +105,22 @@
             },
             {
               "word": "monomial",
+=======
+          "word": "Cram",
+          "children": [
+            {
+              "word": "SofTest",
+              "children": []
+            },
+            {
+              "word": "PreTest",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "geometry",
           "children": [
             {
@@ -84,6 +137,12 @@
             },
             {
               "word": "trigonometrical",
+=======
+          "word": "cbt",
+          "children": [
+            {
+              "word": "simulator",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
@@ -91,6 +150,7 @@
       ]
     },
     {
+<<<<<<< Updated upstream
       "word": "arithmetic",
       "children": [
         {
@@ -110,11 +170,33 @@
             },
             {
               "word": "statistical",
+=======
+      "word": "quiz",
+      "children": [
+        {
+          "word": "questionnaire",
+          "children": [
+            {
+              "word": "survey",
+              "children": []
+            },
+            {
+              "word": "assessment",
+              "children": []
+            },
+            {
+              "word": "psychometric",
+              "children": []
+            },
+            {
+              "word": "checklist",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "integers",
           "children": [
             {
@@ -131,11 +213,34 @@
             },
             {
               "word": "numerators",
+=======
+          "word": "questions",
+          "children": []
+        },
+        {
+          "word": "prep",
+          "children": [
+            {
+              "word": "SATs",
+              "children": []
+            },
+            {
+              "word": "GRE",
+              "children": []
+            },
+            {
+              "word": "lab",
+              "children": []
+            },
+            {
+              "word": "examinations",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "computations",
           "children": [
             {
@@ -173,6 +278,16 @@
             },
             {
               "word": "subtract",
+=======
+          "word": "poll",
+          "children": [
+            {
+              "word": "report",
+              "children": []
+            },
+            {
+              "word": "study",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
@@ -180,6 +295,7 @@
       ]
     },
     {
+<<<<<<< Updated upstream
       "word": "worksheets",
       "children": [
         {
@@ -199,11 +315,29 @@
             },
             {
               "word": "textbooks",
+=======
+      "word": "screening",
+      "children": [
+        {
+          "word": "mammography",
+          "children": [
+            {
+              "word": "mammogram",
+              "children": []
+            },
+            {
+              "word": "cytology",
+              "children": []
+            },
+            {
+              "word": "prediagnostic",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "flashcards",
           "children": [
             {
@@ -220,11 +354,30 @@
             },
             {
               "word": "crosswords",
+=======
+          "word": "testing",
+          "children": [
+            {
+              "word": "testers",
+              "children": []
+            },
+            {
+              "word": "inspection",
+              "children": []
+            },
+            {
+              "word": "laboratory",
+              "children": []
+            },
+            {
+              "word": "calibration",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "printable",
           "children": [
             {
@@ -233,11 +386,30 @@
             },
             {
               "word": "cursive",
+=======
+          "word": "diagnostic",
+          "children": [
+            {
+              "word": "serological",
+              "children": []
+            },
+            {
+              "word": "diagnose",
+              "children": []
+            },
+            {
+              "word": "workup",
+              "children": []
+            },
+            {
+              "word": "ultrasound",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "powerpoints",
           "children": [
             {
@@ -257,10 +429,15 @@
               "children": []
             }
           ]
+=======
+          "word": "biopsy",
+          "children": []
+>>>>>>> Stashed changes
         }
       ]
     },
     {
+<<<<<<< Updated upstream
       "word": "trigonometry",
       "children": [
         {
@@ -280,11 +457,33 @@
             },
             {
               "word": "exponentials",
+=======
+      "word": "evaluation",
+      "children": [
+        {
+          "word": "evaluate",
+          "children": [
+            {
+              "word": "assess",
+              "children": []
+            },
+            {
+              "word": "examine",
+              "children": []
+            },
+            {
+              "word": "validate",
+              "children": []
+            },
+            {
+              "word": "inspect",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "cosecant",
           "children": [
             {
@@ -301,11 +500,26 @@
             },
             {
               "word": "cubics",
+=======
+          "word": "summative",
+          "children": [
+            {
+              "word": "rubric",
+              "children": []
+            },
+            {
+              "word": "examinational",
+              "children": []
+            },
+            {
+              "word": "pretesting",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "graphing",
           "children": [
             {
@@ -322,11 +536,30 @@
             },
             {
               "word": "factorials",
+=======
+          "word": "benchmarking",
+          "children": [
+            {
+              "word": "baseline",
+              "children": []
+            },
+            {
+              "word": "measurement",
+              "children": []
+            },
+            {
+              "word": "yardstick",
+              "children": []
+            },
+            {
+              "word": "sampling",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
         },
         {
+<<<<<<< Updated upstream
           "word": "hyperbolae",
           "children": [
             {
@@ -335,6 +568,24 @@
             },
             {
               "word": "infinitesimals",
+=======
+          "word": "monitoring",
+          "children": [
+            {
+              "word": "measuring",
+              "children": []
+            },
+            {
+              "word": "detection",
+              "children": []
+            },
+            {
+              "word": "calibrating",
+              "children": []
+            },
+            {
+              "word": "verification",
+>>>>>>> Stashed changes
               "children": []
             }
           ]
