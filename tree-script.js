@@ -319,6 +319,7 @@ function highlightObject(obj) {
     hoveredObject = obj;
 
     if (hoveredObject && hoveredObject.material) {
+      resetLabels();
       displayPath(hoveredObject);
       if (hoveredObject.material.emissive) {
         hoveredObject.material.emissive.setHex(0x333333);
