@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const res = await fetch('sampleTree.json'); // [cite: Cal-Hacks-2025/sampleTree.json]
+        const res = await fetch('trees.json'); // [cite: Cal-Hacks-2025/sampleTree.json]
         if (!res.ok) {
             throw new Error(`Could not load sampleTree.json: ${res.statusText}`);
         }

@@ -1,89 +1,89 @@
 {
-  "word": "college",
+  "word": "math",
   "children": [
     {
-      "word": "university",
+      "word": "algebra",
       "children": [
         {
-          "word": "undergraduate",
+          "word": "mathematics",
           "children": [
             {
-              "word": "postgraduate",
+              "word": "physics",
               "children": []
             },
             {
-              "word": "doctoral",
+              "word": "science",
               "children": []
             },
             {
-              "word": "baccalaureate",
+              "word": "biology",
               "children": []
             },
             {
-              "word": "coursework",
+              "word": "linguistics",
               "children": []
             }
           ]
         },
         {
-          "word": "seminary",
+          "word": "trigonometric",
           "children": [
             {
-              "word": "seminarian",
+              "word": "algebraic",
               "children": []
             },
             {
-              "word": "yeshiva",
+              "word": "Logarithmic",
               "children": []
             },
             {
-              "word": "convent",
+              "word": "cosine",
               "children": []
             },
             {
-              "word": "parochial",
+              "word": "logarithms",
               "children": []
             }
           ]
         },
         {
-          "word": "institute",
+          "word": "quadratic",
           "children": [
             {
-              "word": "academy",
+              "word": "polynomial",
               "children": []
             },
             {
-              "word": "institution",
+              "word": "equations",
               "children": []
             },
             {
-              "word": "mba",
+              "word": "algebraical",
               "children": []
             },
             {
-              "word": "education",
+              "word": "monomial",
               "children": []
             }
           ]
         },
         {
-          "word": "polytechnic",
+          "word": "geometry",
           "children": [
             {
-              "word": "matriculation",
+              "word": "geometer",
               "children": []
             },
             {
-              "word": "unaccredited",
+              "word": "conics",
               "children": []
             },
             {
-              "word": "vocational",
+              "word": "hyperbola",
               "children": []
             },
             {
-              "word": "enrolment",
+              "word": "trigonometrical",
               "children": []
             }
           ]
@@ -91,88 +91,169 @@
       ]
     },
     {
-      "word": "school",
+      "word": "arithmetic",
       "children": [
         {
-          "word": "kindergarten",
+          "word": "mathematical",
+          "children": [
+            {
+              "word": "numerical",
+              "children": []
+            },
+            {
+              "word": "computational",
+              "children": []
+            },
+            {
+              "word": "arithmetical",
+              "children": []
+            },
+            {
+              "word": "statistical",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "integers",
+          "children": [
+            {
+              "word": "divisors",
+              "children": []
+            },
+            {
+              "word": "hexadecimals",
+              "children": []
+            },
+            {
+              "word": "multiplicand",
+              "children": []
+            },
+            {
+              "word": "numerators",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "computations",
+          "children": [
+            {
+              "word": "calculations",
+              "children": []
+            },
+            {
+              "word": "compute",
+              "children": []
+            },
+            {
+              "word": "factorizations",
+              "children": []
+            },
+            {
+              "word": "computable",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "decimals",
+          "children": [
+            {
+              "word": "fractions",
+              "children": []
+            },
+            {
+              "word": "percents",
+              "children": []
+            },
+            {
+              "word": "binomials",
+              "children": []
+            },
+            {
+              "word": "subtract",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "worksheets",
+      "children": [
+        {
+          "word": "workbooks",
+          "children": [
+            {
+              "word": "curriculums",
+              "children": []
+            },
+            {
+              "word": "classroom",
+              "children": []
+            },
+            {
+              "word": "alouds",
+              "children": []
+            },
+            {
+              "word": "textbooks",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "flashcards",
+          "children": [
+            {
+              "word": "vocabulary",
+              "children": []
+            },
+            {
+              "word": "memorize",
+              "children": []
+            },
+            {
+              "word": "phonics",
+              "children": []
+            },
+            {
+              "word": "crosswords",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "printable",
           "children": [
             {
               "word": "preschool",
               "children": []
             },
             {
-              "word": "grades",
-              "children": []
-            },
-            {
-              "word": "homeschool",
-              "children": []
-            },
-            {
-              "word": "homeroom",
+              "word": "cursive",
               "children": []
             }
           ]
         },
         {
-          "word": "elementary",
+          "word": "powerpoints",
           "children": [
             {
-              "word": "prekindergarten",
+              "word": "quizes",
               "children": []
             },
             {
-              "word": "secondary",
+              "word": "practicals",
               "children": []
             },
             {
-              "word": "mathematics",
+              "word": "esl",
               "children": []
             },
             {
-              "word": "pupils",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "teacher",
-          "children": [
-            {
-              "word": "tutor",
-              "children": []
-            },
-            {
-              "word": "student",
-              "children": []
-            },
-            {
-              "word": "teaching",
-              "children": []
-            },
-            {
-              "word": "librarian",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "classroom",
-          "children": [
-            {
-              "word": "curriculum",
-              "children": []
-            },
-            {
-              "word": "tutoring",
-              "children": []
-            },
-            {
-              "word": "schooling",
-              "children": []
-            },
-            {
-              "word": "academic",
+              "word": "ict",
               "children": []
             }
           ]
@@ -180,177 +261,80 @@
       ]
     },
     {
-      "word": "graduate",
+      "word": "trigonometry",
       "children": [
         {
-          "word": "graduating",
+          "word": "integrals",
           "children": [
             {
-              "word": "graduated",
+              "word": "theorems",
               "children": []
             },
             {
-              "word": "enrolling",
+              "word": "commutative",
               "children": []
             },
             {
-              "word": "freshman",
+              "word": "trinomials",
               "children": []
             },
             {
-              "word": "valedictorian",
+              "word": "exponentials",
               "children": []
             }
           ]
         },
         {
-          "word": "doctorate",
+          "word": "cosecant",
           "children": [
             {
-              "word": "bachelors",
+              "word": "biquadratic",
               "children": []
             },
             {
-              "word": "degree",
+              "word": "radians",
               "children": []
             },
             {
-              "word": "professor",
+              "word": "quaternions",
               "children": []
             },
             {
-              "word": "diploma",
+              "word": "cubics",
               "children": []
             }
           ]
         },
         {
-          "word": "PhD",
+          "word": "graphing",
           "children": [
             {
-              "word": "postdoctoral",
+              "word": "calculator",
               "children": []
             },
             {
-              "word": "MFA",
+              "word": "precalculate",
               "children": []
             },
             {
-              "word": "LLB",
+              "word": "factorizing",
               "children": []
             },
             {
-              "word": "majoring",
+              "word": "factorials",
               "children": []
             }
           ]
         },
         {
-          "word": "enrolled",
+          "word": "hyperbolae",
           "children": [
             {
-              "word": "matriculated",
+              "word": "algebraists",
               "children": []
             },
             {
-              "word": "attending",
-              "children": []
-            },
-            {
-              "word": "enrollment",
-              "children": []
-            },
-            {
-              "word": "semesters",
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "word": "undergrad",
-      "children": [
-        {
-          "word": "premed",
-          "children": [
-            {
-              "word": "dietetics",
-              "children": []
-            },
-            {
-              "word": "minoring",
-              "children": []
-            },
-            {
-              "word": "gpa",
-              "children": []
-            },
-            {
-              "word": "flunking",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "profs",
-          "children": [
-            {
-              "word": "lecturers",
-              "children": []
-            },
-            {
-              "word": "faculty",
-              "children": []
-            },
-            {
-              "word": "univs",
-              "children": []
-            },
-            {
-              "word": "alumnis",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "postdocs",
-          "children": [
-            {
-              "word": "professorships",
-              "children": []
-            },
-            {
-              "word": "interns",
-              "children": []
-            },
-            {
-              "word": "fellowships",
-              "children": []
-            },
-            {
-              "word": "stipends",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "majored",
-          "children": [
-            {
-              "word": "minored",
-              "children": []
-            },
-            {
-              "word": "excelled",
-              "children": []
-            },
-            {
-              "word": "studying",
-              "children": []
-            },
-            {
-              "word": "flunked",
+              "word": "infinitesimals",
               "children": []
             }
           ]

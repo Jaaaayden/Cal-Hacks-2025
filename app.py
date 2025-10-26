@@ -1,7 +1,10 @@
 from flask import Flask, request, jsonify
 from flask import send_from_directory
 from flask_cors import CORS
+from main import run_in_code
 import os
+import asyncio
+import aiofiles
 
 app = Flask(__name__, static_folder='.', static_url_path='')
 CORS(app)
@@ -17,13 +20,15 @@ def static_files(path):
 
 # simple API endpoint to receive the submitted word
 @app.route('/api/word', methods=['POST'])
-def receive_word():
+async def receive_word():
     data = request.get_json(silent=True) or {}
     word = (data.get('word') or '').strip()
     if not word:
         return jsonify({'error': 'no word provided'}), 400
+    print("first print")
+    await run_in_code(word)
+    
 
-    # TODO: replace with real processing (generate tree, DB, etc.)
     response = {
         'word': word,
         'status': 'received',
