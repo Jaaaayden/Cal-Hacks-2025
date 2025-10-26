@@ -50,6 +50,9 @@ class SpatialHash {
     }
     return true;
   }
+    clear() {
+    this.map.clear();
+    }
 }
 const MIN_GLOBAL_DIST = 1.25; // world units (tweak as needed)
 const MIN_GLOBAL_DIST_SQ = MIN_GLOBAL_DIST * MIN_GLOBAL_DIST;
@@ -262,6 +265,20 @@ function renderTree(treeNode, scene, position = [0, 0, 0], depth = 0, prevPos = 
 }
 
 // --- Helper functions and Classes ---
+function clearScene(scene) {
+    // dispose geometries/materials/textures for GC friendliness
+    scene.traverse(obj => {
+      if (obj.geometry) obj.geometry.dispose?.();
+      if (obj.material) {
+        if (Array.isArray(obj.material)) obj.material.forEach(m => m.dispose?.());
+        else obj.material.dispose?.();
+      }
+      if (obj.userData?.canvasTexture) obj.userData.canvasTexture.dispose?.();
+    });
+    // remove all children
+    while (scene.children.length) scene.remove(scene.children[0]);
+}
+
 function getRandomFloat(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -378,7 +395,7 @@ class VisualizedWordNode {
         scene.add(glowMesh);
 
         // --- Text label ---
-        this.label = createTextSprite(word, { fontSize: 32, scale: 0.0006 });
+        this.label = createTextSprite(word, { fontSize: 26, scale: 0.0004});
         this.label.position.set(position[0], position[1] + 0.8, position[2]);
         scene.add(this.label);
     }
@@ -433,7 +450,7 @@ function* generateNextPosition(parentPos, grandparentPos, parentDepth, totalChil
     const TAU = Math.PI * 2;
     const n = Math.max(1, totalChildren);
     const baseRadius = 1.0; // nominal radial distance from root
-    const elevMin = 3.5, elevMax = 4.0; // vertical lift
+    const elevMin = 4.5, elevMax = 5.0; // vertical lift
 
     for (let i = 0; i < n; i++) {
       const angle = (i / n) * TAU;
@@ -614,3 +631,20 @@ function* generateNextPosition(parentPos, grandparentPos, parentDepth, totalChil
     return;
   }
 }
+document.addEventListener('DOMContentLoaded', () => {
+    const generateBtn = document.getElementById('generate-tree');
+    if (!generateBtn) return;
+  
+    generateBtn.addEventListener('click', () => {
+      // If they came from your homepage, go back. Otherwise hard-redirect.
+      const ref = document.referrer ? new URL(document.referrer) : null;
+      const cameFromHome = !!ref && /(?:^|\/)(index\.html)?$/.test(ref.pathname);
+  
+      if (cameFromHome) {
+        history.back();
+      } else {
+        // change if your homepage filename/path is different
+        window.location.href = 'index.html';
+      }
+    });
+  });

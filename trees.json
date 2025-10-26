@@ -1,89 +1,89 @@
 {
-  "word": "dih",
+  "word": "physics",
   "children": [
     {
-      "word": "kuh",
+      "word": "mathematics",
       "children": [
         {
-          "word": "kah",
+          "word": "algebra",
           "children": [
             {
-              "word": "tah",
+              "word": "math",
               "children": []
             },
             {
-              "word": "keh",
+              "word": "arithmetic",
               "children": []
             },
             {
-              "word": "loh",
+              "word": "geometry",
               "children": []
             },
             {
-              "word": "sah",
+              "word": "equations",
               "children": []
             }
           ]
         },
         {
-          "word": "guh",
+          "word": "trigonometry",
           "children": [
             {
-              "word": "yuh",
+              "word": "algebraic",
               "children": []
             },
             {
-              "word": "gah",
+              "word": "integrals",
               "children": []
             },
             {
-              "word": "fuh",
+              "word": "theorems",
               "children": []
             },
             {
-              "word": "muh",
+              "word": "arithmetician",
               "children": []
             }
           ]
         },
         {
-          "word": "puh",
+          "word": "linguistics",
           "children": [
             {
-              "word": "noo",
+              "word": "anthropology",
               "children": []
             },
             {
-              "word": "pah",
+              "word": "lexicology",
               "children": []
             },
             {
-              "word": "yuk",
+              "word": "phonetics",
               "children": []
             },
             {
-              "word": "kum",
+              "word": "philology",
               "children": []
             }
           ]
         },
         {
-          "word": "kee",
+          "word": "sociology",
           "children": [
             {
-              "word": "toh",
+              "word": "psychology",
               "children": []
             },
             {
-              "word": "yee",
+              "word": "economics",
               "children": []
             },
             {
-              "word": "kon",
+              "word": "criminology",
               "children": []
             },
             {
-              "word": "luh",
+              "word": "psychiatry",
               "children": []
             }
           ]
@@ -91,88 +91,88 @@
       ]
     },
     {
-      "word": "suh",
+      "word": "science",
       "children": [
         {
-          "word": "hae",
+          "word": "scientific",
           "children": [
             {
-              "word": "ony",
+              "word": "empirical",
               "children": []
             },
             {
-              "word": "gae",
+              "word": "mathematical",
               "children": []
             },
             {
-              "word": "yur",
+              "word": "theoretical",
               "children": []
             },
             {
-              "word": "nae",
+              "word": "philosophical",
               "children": []
             }
           ]
         },
         {
-          "word": "cah",
+          "word": "scientist",
           "children": [
             {
-              "word": "yal",
+              "word": "physicist",
               "children": []
             },
             {
-              "word": "tme",
+              "word": "biologist",
               "children": []
             },
             {
-              "word": "ane",
+              "word": "mathematician",
               "children": []
             },
             {
-              "word": "sey",
+              "word": "chemist",
               "children": []
             }
           ]
         },
         {
-          "word": "beng",
+          "word": "astronomy",
           "children": [
             {
-              "word": "peng",
+              "word": "astronomers",
               "children": []
             },
             {
-              "word": "hahs",
+              "word": "cosmology",
               "children": []
             },
             {
-              "word": "pek",
+              "word": "astronomics",
               "children": []
             },
             {
-              "word": "okies",
+              "word": "astrophysicists",
               "children": []
             }
           ]
         },
         {
-          "word": "wuh",
+          "word": "philosophy",
           "children": [
             {
-              "word": "oww",
+              "word": "metaphysics",
               "children": []
             },
             {
-              "word": "LOl",
+              "word": "theology",
               "children": []
             },
             {
-              "word": "urr",
+              "word": "epistemology",
               "children": []
             },
             {
-              "word": "whu",
+              "word": "theory",
               "children": []
             }
           ]
@@ -180,88 +180,88 @@
       ]
     },
     {
-      "word": "tuh",
+      "word": "biology",
       "children": [
         {
-          "word": "gak",
+          "word": "biochemistry",
           "children": [
             {
-              "word": "aku",
+              "word": "microbiology",
               "children": []
             },
             {
-              "word": "akan",
+              "word": "pharmacology",
               "children": []
             },
             {
-              "word": "tgk",
+              "word": "immunology",
               "children": []
             },
             {
-              "word": "aja",
+              "word": "neurobiology",
               "children": []
             }
           ]
         },
         {
-          "word": "tuu",
+          "word": "physiology",
           "children": [
             {
-              "word": "wae",
+              "word": "anatomy",
               "children": []
             },
             {
-              "word": "bby",
+              "word": "pathology",
               "children": []
             },
             {
-              "word": "baq",
+              "word": "neuroscience",
               "children": []
             },
             {
-              "word": "liaos",
+              "word": "kinesiology",
               "children": []
             }
           ]
         },
         {
-          "word": "deh",
+          "word": "ecology",
           "children": [
             {
-              "word": "seh",
+              "word": "geology",
               "children": []
             },
             {
-              "word": "pon",
+              "word": "botany",
               "children": []
             },
             {
-              "word": "mek",
+              "word": "systematics",
               "children": []
             },
             {
-              "word": "weh",
+              "word": "hydrology",
               "children": []
             }
           ]
         },
         {
-          "word": "lah",
+          "word": "zoology",
           "children": [
             {
-              "word": "leh",
+              "word": "paleontology",
               "children": []
             },
             {
-              "word": "laa",
+              "word": "entomology",
               "children": []
             },
             {
-              "word": "anw",
+              "word": "ethology",
               "children": []
             },
             {
-              "word": "arh",
+              "word": "primatology",
               "children": []
             }
           ]
@@ -269,88 +269,88 @@
       ]
     },
     {
-      "word": "nuh",
+      "word": "chemistry",
       "children": [
         {
-          "word": "nah",
+          "word": "chemism",
           "children": [
             {
-              "word": "naw",
+              "word": "atomism",
               "children": []
             },
             {
-              "word": "yah",
+              "word": "uniformitarianism",
               "children": []
             },
             {
-              "word": "ehh",
+              "word": "scientistic",
               "children": []
             },
             {
-              "word": "uhm",
+              "word": "anomalism",
               "children": []
             }
           ]
         },
         {
-          "word": "dey",
+          "word": "toxicology",
           "children": [
             {
-              "word": "itz",
+              "word": "epidemiology",
               "children": []
             },
             {
-              "word": "lik",
+              "word": "pharmacognosy",
               "children": []
             },
             {
-              "word": "wey",
+              "word": "hematology",
               "children": []
             },
             {
-              "word": "wun",
+              "word": "laboratory",
               "children": []
             }
           ]
         },
         {
-          "word": "wuk",
+          "word": "engineering",
           "children": [
             {
-              "word": "duu",
+              "word": "mechanical",
               "children": []
             },
             {
-              "word": "kuz",
+              "word": "biomedical",
               "children": []
             },
             {
-              "word": "qet",
+              "word": "aeronautical",
               "children": []
             },
             {
-              "word": "ahn",
+              "word": "technology",
               "children": []
             }
           ]
         },
         {
-          "word": "duh",
+          "word": "biotechnology",
           "children": [
             {
-              "word": "dah",
+              "word": "nanotechnology",
               "children": []
             },
             {
-              "word": "buh",
+              "word": "genomics",
               "children": []
             },
             {
-              "word": "dum",
+              "word": "bioengineering",
               "children": []
             },
             {
-              "word": "ryt",
+              "word": "pharmaceutics",
               "children": []
             }
           ]
