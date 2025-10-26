@@ -4,42 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tree Generator</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Link to the shared stylesheet -->
+    <link rel="stylesheet" href="style.css"> 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- Added import map so example modules that import "three" resolve correctly -->
-    <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.152.2/build/three.module.js"
-      }
-    }
-    </script>
 </head>
 <body>
-
-    <div id="loading-overlay" class="hidden">
-        <div class="spinner"></div>
-        <p>Loading...</p>
-    </div>
-
+    <!-- Main content container -->
     <main class="container">
         <div class="content">
             <h1 class="title">Tree Generator</h1>
-            <p class="description">Enter a `word to generate an interactive, 3D tree of related concepts.</p>
+            <p class="description">Enter a word to generate an interactive, 3D tree of related concepts.</p>
         </div>
         <div class="input-container">
             <form id="word-form">
                 <input type="text" id="word-input" placeholder="Enter a word..." required autofocus>
+                <!-- Submission happens on Enter key -->
             </form>
         </div>
     </main>
 
-    <div id="scene-container" class="hidden">
-        <p>The 3D tree would be rendered here.</p>
-    </div>
-
-    <script type="module" src="script.js"></script>
-
+    <!-- Link to the specific script for this page -->
+    <script src="home-script.js"></script> 
 </body>
 </html>
