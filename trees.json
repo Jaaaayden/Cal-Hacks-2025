@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "brain": {
     "ID": 1,
     "word": "brain",
@@ -446,3 +447,365 @@
     ]
   }
 }
+=======
+  "word": "college",
+  "children": [
+    {
+      "word": "university",
+      "children": [
+        {
+          "word": "undergraduate",
+          "children": [
+            {
+              "word": "postgraduate",
+              "children": []
+            },
+            {
+              "word": "doctoral",
+              "children": []
+            },
+            {
+              "word": "baccalaureate",
+              "children": []
+            },
+            {
+              "word": "coursework",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "seminary",
+          "children": [
+            {
+              "word": "seminarian",
+              "children": []
+            },
+            {
+              "word": "yeshiva",
+              "children": []
+            },
+            {
+              "word": "convent",
+              "children": []
+            },
+            {
+              "word": "parochial",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "institute",
+          "children": [
+            {
+              "word": "academy",
+              "children": []
+            },
+            {
+              "word": "institution",
+              "children": []
+            },
+            {
+              "word": "mba",
+              "children": []
+            },
+            {
+              "word": "education",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "polytechnic",
+          "children": [
+            {
+              "word": "matriculation",
+              "children": []
+            },
+            {
+              "word": "unaccredited",
+              "children": []
+            },
+            {
+              "word": "vocational",
+              "children": []
+            },
+            {
+              "word": "enrolment",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "school",
+      "children": [
+        {
+          "word": "kindergarten",
+          "children": [
+            {
+              "word": "preschool",
+              "children": []
+            },
+            {
+              "word": "grades",
+              "children": []
+            },
+            {
+              "word": "homeschool",
+              "children": []
+            },
+            {
+              "word": "homeroom",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "elementary",
+          "children": [
+            {
+              "word": "prekindergarten",
+              "children": []
+            },
+            {
+              "word": "secondary",
+              "children": []
+            },
+            {
+              "word": "mathematics",
+              "children": []
+            },
+            {
+              "word": "pupils",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "teacher",
+          "children": [
+            {
+              "word": "tutor",
+              "children": []
+            },
+            {
+              "word": "student",
+              "children": []
+            },
+            {
+              "word": "teaching",
+              "children": []
+            },
+            {
+              "word": "librarian",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "classroom",
+          "children": [
+            {
+              "word": "curriculum",
+              "children": []
+            },
+            {
+              "word": "tutoring",
+              "children": []
+            },
+            {
+              "word": "schooling",
+              "children": []
+            },
+            {
+              "word": "academic",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "graduate",
+      "children": [
+        {
+          "word": "graduating",
+          "children": [
+            {
+              "word": "graduated",
+              "children": []
+            },
+            {
+              "word": "enrolling",
+              "children": []
+            },
+            {
+              "word": "freshman",
+              "children": []
+            },
+            {
+              "word": "valedictorian",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "doctorate",
+          "children": [
+            {
+              "word": "bachelors",
+              "children": []
+            },
+            {
+              "word": "degree",
+              "children": []
+            },
+            {
+              "word": "professor",
+              "children": []
+            },
+            {
+              "word": "diploma",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "PhD",
+          "children": [
+            {
+              "word": "postdoctoral",
+              "children": []
+            },
+            {
+              "word": "MFA",
+              "children": []
+            },
+            {
+              "word": "LLB",
+              "children": []
+            },
+            {
+              "word": "majoring",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "enrolled",
+          "children": [
+            {
+              "word": "matriculated",
+              "children": []
+            },
+            {
+              "word": "attending",
+              "children": []
+            },
+            {
+              "word": "enrollment",
+              "children": []
+            },
+            {
+              "word": "semesters",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "undergrad",
+      "children": [
+        {
+          "word": "premed",
+          "children": [
+            {
+              "word": "dietetics",
+              "children": []
+            },
+            {
+              "word": "minoring",
+              "children": []
+            },
+            {
+              "word": "gpa",
+              "children": []
+            },
+            {
+              "word": "flunking",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "profs",
+          "children": [
+            {
+              "word": "lecturers",
+              "children": []
+            },
+            {
+              "word": "faculty",
+              "children": []
+            },
+            {
+              "word": "univs",
+              "children": []
+            },
+            {
+              "word": "alumnis",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "postdocs",
+          "children": [
+            {
+              "word": "professorships",
+              "children": []
+            },
+            {
+              "word": "interns",
+              "children": []
+            },
+            {
+              "word": "fellowships",
+              "children": []
+            },
+            {
+              "word": "stipends",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "majored",
+          "children": [
+            {
+              "word": "minored",
+              "children": []
+            },
+            {
+              "word": "excelled",
+              "children": []
+            },
+            {
+              "word": "studying",
+              "children": []
+            },
+            {
+              "word": "flunked",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+>>>>>>> cf09c8451628462a2a500f9df5e1d84978c28ffc
