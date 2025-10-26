@@ -9,6 +9,9 @@ import { UnrealBloomPass } from "https://esm.sh/three@0.169.0/examples/jsm/postp
 // --- Global Variables ---
 let renderer, camera, controls, scene, composer;
 let circleMeshToWord = new Map();
+let wordToVisualizedNode = new Map();
+let rootWord = null;
+let allVisualizedNodeObjects = []
 // --- Get HTML Elements ---
 const loadingOverlay = document.getElementById('loading-overlay');
 const sceneContainer = document.getElementById('scene-container');
@@ -291,6 +294,7 @@ function checkIntersects(onClick) {
   } else {
     // Handle when not hovering any object
     clearHighlight();
+    resetLabels();
   }
 }
 
@@ -308,17 +312,47 @@ function highlightObject(obj) {
         hoveredObject.material.color.setHex(0x003300);
       }
     }
+    
 
     hoveredObject = obj;
 
     if (hoveredObject && hoveredObject.material) {
+      displayPath(hoveredObject);
       if (hoveredObject.material.emissive) {
         hoveredObject.material.emissive.setHex(0x333333);
+        
       } else if (hoveredObject.material.color) {
         hoveredObject.material.color.setHex(0x33ff33);
       }
     }
   }
+}
+function displayPath(obj) {
+    displayPathRecursiveHelper(rootWord, circleMeshToWord.get(obj))
+}
+function displayPathRecursiveHelper(curWord, stopWord) {
+    
+    if (curWord === stopWord) {
+        return;
+    }
+    let curNode = wordToVisualizedNode.get(curWord);
+    if(curNode === null) {return};
+    
+    curNode.label.material.visible = false;
+    if(curNode.children === null || curNode.children.length === 0) {
+        return;
+    }
+    for(let i = 0; i < curNode.children.length; i++) {
+        displayPathRecursiveHelper(curNode.children[i].word, stopWord);
+    }
+}
+
+function resetLabels() {
+    
+    for(let i = 0; i < allVisualizedNodeObjects.length; i++) {
+        allVisualizedNodeObjects[i].label.material.visible = true;
+        console.log("success");
+    }
 }
 
 function clearHighlight() {
@@ -359,8 +393,9 @@ window.addEventListener('resize', () => {
 // --- RENDER TREE ---
 // NOTE: pass grandparent position for forward-cone at depth >= 2
 function renderTree(treeNode, scene, position = [0, 0, 0], depth = 0, prevPos = null) {
+  
   if (!treeNode || !treeNode.word) return;
-
+  if (!rootWord) {rootWord = treeNode.word};
   new VisualizedWordNode(treeNode.word, scene, position, treeNode.children);
 
   const children = Array.isArray(treeNode.children) ? treeNode.children : [];
@@ -517,7 +552,8 @@ class VisualizedWordNode {
     this.sphere = circleMesh;
     NodesList.push(this.sphere); // Add to global NodesList for interaction
     circleMeshToWord.set(this.sphere, word);
-    
+    wordToVisualizedNode.set(word, this);
+    allVisualizedNodeObjects.push(this);
     this._scene = scene;
   }
 }
