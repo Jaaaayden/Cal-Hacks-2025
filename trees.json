@@ -1,538 +1,89 @@
 {
-<<<<<<< HEAD
-  "brain": {
-    "ID": 1,
-    "word": "brain",
-    "children": [
-      {
-        "ID": 1,
-        "word": "neurons",
-        "children": [
-          {
-            "ID": 1,
-            "word": "axons",
-            "children": [
-              {
-                "ID": 1,
-                "word": "motoneurons",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "myelin",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "midbrain",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "innervating",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "cortex",
-            "children": [
-              {
-                "ID": 1,
-                "word": "cortical",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "prefrontal",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "amygdala",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "medulla",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "glia",
-            "children": [
-              {
-                "ID": 1,
-                "word": "neuroblasts",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "neuronic",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "mesencephalon",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "glomeruli",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "synapse",
-            "children": [
-              {
-                "ID": 1,
-                "word": "synaptic",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "neuronal",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "neurotransmitter",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "neuroglia",
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "ID": 1,
-        "word": "neurological",
-        "children": [
-          {
-            "ID": 1,
-            "word": "degenerative",
-            "children": [
-              {
-                "ID": 1,
-                "word": "spinal",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "neurologic",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "retinal",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "connective",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "cognitive",
-            "children": [
-              {
-                "ID": 1,
-                "word": "behavioral",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "cognition",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "perceptual",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "mental",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "neuromuscular",
-            "children": [
-              {
-                "ID": 1,
-                "word": "neurovascular",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "vagal",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "cerebellar",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "oculomotor",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "neurologists",
-            "children": [
-              {
-                "ID": 1,
-                "word": "neurosurgeons",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "neuroscientists",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "neurology",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "neuropsychiatry",
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "ID": 1,
-        "word": "cerebellum",
-        "children": [
-          {
-            "ID": 1,
-            "word": "cerebrum",
-            "children": [
-              {
-                "ID": 1,
-                "word": "cranium",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "subcortex",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "thalami",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "parietal",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "cerebella",
-            "children": [
-              {
-                "ID": 1,
-                "word": "rhombencephalon",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "mesencephalic",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "cerebra",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "cochleae",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "forebrain",
-            "children": [
-              {
-                "ID": 1,
-                "word": "hindbrain",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "diencephalon",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "microcephalic",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "caudate",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "ganglia",
-            "children": [
-              {
-                "ID": 1,
-                "word": "ganglions",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "innervation",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "plexuses",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "thalamic",
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "ID": 1,
-        "word": "limbic",
-        "children": [
-          {
-            "ID": 1,
-            "word": "olfactory",
-            "children": [
-              {
-                "ID": 1,
-                "word": "sensory",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "auditory",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "vestibular",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "afferent",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "parasympathetic",
-            "children": [
-              {
-                "ID": 1,
-                "word": "autonomic",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "efferent",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "innervated",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "trigeminal",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "hippocampi",
-            "children": [
-              {
-                "ID": 1,
-                "word": "biparietal",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "cochleas",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "encephalic",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "encephalogram",
-                "children": []
-              }
-            ]
-          },
-          {
-            "ID": 1,
-            "word": "occipital",
-            "children": [
-              {
-                "ID": 1,
-                "word": "cranial",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "medullar",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "ventral",
-                "children": []
-              },
-              {
-                "ID": 1,
-                "word": "temporal",
-                "children": []
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
-}
-=======
-  "word": "college",
+  "word": "math",
   "children": [
     {
-      "word": "university",
+      "word": "algebra",
       "children": [
         {
-          "word": "undergraduate",
+          "word": "mathematics",
           "children": [
             {
-              "word": "postgraduate",
+              "word": "physics",
               "children": []
             },
             {
-              "word": "doctoral",
+              "word": "science",
               "children": []
             },
             {
-              "word": "baccalaureate",
+              "word": "biology",
               "children": []
             },
             {
-              "word": "coursework",
+              "word": "linguistics",
               "children": []
             }
           ]
         },
         {
-          "word": "seminary",
+          "word": "trigonometric",
           "children": [
             {
-              "word": "seminarian",
+              "word": "algebraic",
               "children": []
             },
             {
-              "word": "yeshiva",
+              "word": "Logarithmic",
               "children": []
             },
             {
-              "word": "convent",
+              "word": "cosine",
               "children": []
             },
             {
-              "word": "parochial",
+              "word": "logarithms",
               "children": []
             }
           ]
         },
         {
-          "word": "institute",
+          "word": "quadratic",
           "children": [
             {
-              "word": "academy",
+              "word": "polynomial",
               "children": []
             },
             {
-              "word": "institution",
+              "word": "equations",
               "children": []
             },
             {
-              "word": "mba",
+              "word": "algebraical",
               "children": []
             },
             {
-              "word": "education",
+              "word": "monomial",
               "children": []
             }
           ]
         },
         {
-          "word": "polytechnic",
+          "word": "geometry",
           "children": [
             {
-              "word": "matriculation",
+              "word": "geometer",
               "children": []
             },
             {
-              "word": "unaccredited",
+              "word": "conics",
               "children": []
             },
             {
-              "word": "vocational",
+              "word": "hyperbola",
               "children": []
             },
             {
-              "word": "enrolment",
+              "word": "trigonometrical",
               "children": []
             }
           ]
@@ -540,88 +91,169 @@
       ]
     },
     {
-      "word": "school",
+      "word": "arithmetic",
       "children": [
         {
-          "word": "kindergarten",
+          "word": "mathematical",
+          "children": [
+            {
+              "word": "numerical",
+              "children": []
+            },
+            {
+              "word": "computational",
+              "children": []
+            },
+            {
+              "word": "arithmetical",
+              "children": []
+            },
+            {
+              "word": "statistical",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "integers",
+          "children": [
+            {
+              "word": "divisors",
+              "children": []
+            },
+            {
+              "word": "hexadecimals",
+              "children": []
+            },
+            {
+              "word": "multiplicand",
+              "children": []
+            },
+            {
+              "word": "numerators",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "computations",
+          "children": [
+            {
+              "word": "calculations",
+              "children": []
+            },
+            {
+              "word": "compute",
+              "children": []
+            },
+            {
+              "word": "factorizations",
+              "children": []
+            },
+            {
+              "word": "computable",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "decimals",
+          "children": [
+            {
+              "word": "fractions",
+              "children": []
+            },
+            {
+              "word": "percents",
+              "children": []
+            },
+            {
+              "word": "binomials",
+              "children": []
+            },
+            {
+              "word": "subtract",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "worksheets",
+      "children": [
+        {
+          "word": "workbooks",
+          "children": [
+            {
+              "word": "curriculums",
+              "children": []
+            },
+            {
+              "word": "classroom",
+              "children": []
+            },
+            {
+              "word": "alouds",
+              "children": []
+            },
+            {
+              "word": "textbooks",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "flashcards",
+          "children": [
+            {
+              "word": "vocabulary",
+              "children": []
+            },
+            {
+              "word": "memorize",
+              "children": []
+            },
+            {
+              "word": "phonics",
+              "children": []
+            },
+            {
+              "word": "crosswords",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "printable",
           "children": [
             {
               "word": "preschool",
               "children": []
             },
             {
-              "word": "grades",
-              "children": []
-            },
-            {
-              "word": "homeschool",
-              "children": []
-            },
-            {
-              "word": "homeroom",
+              "word": "cursive",
               "children": []
             }
           ]
         },
         {
-          "word": "elementary",
+          "word": "powerpoints",
           "children": [
             {
-              "word": "prekindergarten",
+              "word": "quizes",
               "children": []
             },
             {
-              "word": "secondary",
+              "word": "practicals",
               "children": []
             },
             {
-              "word": "mathematics",
+              "word": "esl",
               "children": []
             },
             {
-              "word": "pupils",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "teacher",
-          "children": [
-            {
-              "word": "tutor",
-              "children": []
-            },
-            {
-              "word": "student",
-              "children": []
-            },
-            {
-              "word": "teaching",
-              "children": []
-            },
-            {
-              "word": "librarian",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "classroom",
-          "children": [
-            {
-              "word": "curriculum",
-              "children": []
-            },
-            {
-              "word": "tutoring",
-              "children": []
-            },
-            {
-              "word": "schooling",
-              "children": []
-            },
-            {
-              "word": "academic",
+              "word": "ict",
               "children": []
             }
           ]
@@ -629,177 +261,80 @@
       ]
     },
     {
-      "word": "graduate",
+      "word": "trigonometry",
       "children": [
         {
-          "word": "graduating",
+          "word": "integrals",
           "children": [
             {
-              "word": "graduated",
+              "word": "theorems",
               "children": []
             },
             {
-              "word": "enrolling",
+              "word": "commutative",
               "children": []
             },
             {
-              "word": "freshman",
+              "word": "trinomials",
               "children": []
             },
             {
-              "word": "valedictorian",
+              "word": "exponentials",
               "children": []
             }
           ]
         },
         {
-          "word": "doctorate",
+          "word": "cosecant",
           "children": [
             {
-              "word": "bachelors",
+              "word": "biquadratic",
               "children": []
             },
             {
-              "word": "degree",
+              "word": "radians",
               "children": []
             },
             {
-              "word": "professor",
+              "word": "quaternions",
               "children": []
             },
             {
-              "word": "diploma",
+              "word": "cubics",
               "children": []
             }
           ]
         },
         {
-          "word": "PhD",
+          "word": "graphing",
           "children": [
             {
-              "word": "postdoctoral",
+              "word": "calculator",
               "children": []
             },
             {
-              "word": "MFA",
+              "word": "precalculate",
               "children": []
             },
             {
-              "word": "LLB",
+              "word": "factorizing",
               "children": []
             },
             {
-              "word": "majoring",
+              "word": "factorials",
               "children": []
             }
           ]
         },
         {
-          "word": "enrolled",
+          "word": "hyperbolae",
           "children": [
             {
-              "word": "matriculated",
+              "word": "algebraists",
               "children": []
             },
             {
-              "word": "attending",
-              "children": []
-            },
-            {
-              "word": "enrollment",
-              "children": []
-            },
-            {
-              "word": "semesters",
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "word": "undergrad",
-      "children": [
-        {
-          "word": "premed",
-          "children": [
-            {
-              "word": "dietetics",
-              "children": []
-            },
-            {
-              "word": "minoring",
-              "children": []
-            },
-            {
-              "word": "gpa",
-              "children": []
-            },
-            {
-              "word": "flunking",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "profs",
-          "children": [
-            {
-              "word": "lecturers",
-              "children": []
-            },
-            {
-              "word": "faculty",
-              "children": []
-            },
-            {
-              "word": "univs",
-              "children": []
-            },
-            {
-              "word": "alumnis",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "postdocs",
-          "children": [
-            {
-              "word": "professorships",
-              "children": []
-            },
-            {
-              "word": "interns",
-              "children": []
-            },
-            {
-              "word": "fellowships",
-              "children": []
-            },
-            {
-              "word": "stipends",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "majored",
-          "children": [
-            {
-              "word": "minored",
-              "children": []
-            },
-            {
-              "word": "excelled",
-              "children": []
-            },
-            {
-              "word": "studying",
-              "children": []
-            },
-            {
-              "word": "flunked",
+              "word": "infinitesimals",
               "children": []
             }
           ]
@@ -808,4 +343,3 @@
     }
   ]
 }
->>>>>>> cf09c8451628462a2a500f9df5e1d84978c28ffc

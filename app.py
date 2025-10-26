@@ -25,10 +25,9 @@ async def receive_word():
     word = (data.get('word') or '').strip()
     if not word:
         return jsonify({'error': 'no word provided'}), 400
-
-    # await run_in_code(word)
-    async with aiofiles.open("trees.json", "w", encoding="utf-8") as f:
-        await f.write({"name": "justinsucksdick"}, f)
+    print("first print")
+    await run_in_code(word)
+    
 
     response = {
         'word': word,

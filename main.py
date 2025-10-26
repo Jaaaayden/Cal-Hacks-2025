@@ -313,7 +313,7 @@ def build_similarity_tree(
     word_filter = word_filter or HybridFilter()
     root_token = pick_token(wv, root_word)
     if not root_token:
-        return {"token": root_word, "score_to_parent": None, "children": [], "note": "OOV"}
+        return {"word": root_word, "children": []}
 
     root_norm = normalize(root_token)
     used_norms = {root_norm}  # Global dedupe
@@ -371,7 +371,7 @@ def build_similarity_tree(
         return picked
 
     def build_node(token: str, score: Optional[float], level: int) -> Dict[str, Any]:
-        node = {"token": token, "score_to_parent": score, "children": []}
+        node = {"word": token, "children": []}
         if level >= depth - 1:
             return node
 
@@ -389,8 +389,8 @@ def build_similarity_tree(
 
 def print_tree(node: Dict[str, Any], prefix: str = "", is_last: bool = True) -> None:
     """Pretty tree with branches; colorized if colorama is available."""
-    token = node.get("token", "")
-    score = node.get("score_to_parent")
+    token = node.get("word", "")
+    score = node.get("")
     connector = "└── " if is_last else "├── "
     sim_str = f" ({score:.3f})" if isinstance(score, (int, float)) else ""
     label = f"{Fore.CYAN}{token}{Style.RESET_ALL}" if COLOR_ENABLED else token
@@ -418,11 +418,9 @@ def simplify_tree_for_json(node: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 async def save_tree_json(tree: Dict[str, Any], path: str) -> None:
+    jsonString = json.dumps(tree, ensure_ascii=False, indent=2)
     async with aiofiles.open(path, "w", encoding="utf-8") as f:
-        await f.write(json.dump(tree, f, indent=2))
-        await f.flush()
-        
-        os.fsync(f.fileno())
+        await f.write(jsonString)
 
 # =============================
 # ENTRY POINT (in-code config)
@@ -431,6 +429,7 @@ async def save_tree_json(tree: Dict[str, Any], path: str) -> None:
 USE_CLI = False  # set True to enable argparse CLI
 
 async def run_in_code(word: str):
+    print("main.py was run")
     """
     Edit these values to run directly from code (no CLI).
     """
@@ -469,14 +468,14 @@ async def run_in_code(word: str):
     )
     all_trees[ROOTS] = tree
     print_tree(tree)
-
+    await save_tree_json(tree, "trees.json")
     simplified_trees = {
                         root: simplify_tree_for_json(tree)
                         for root, tree in all_trees.items()
                         }
     print(simplified_trees)
-    with open("trees.json", "w", encoding="utf-8") as f:
-        json.dump(simplified_trees, f, indent=2, ensure_ascii=False)
+    # with open("trees.json", "w", encoding="utf-8") as f:
+    #     json.dump(simplified_trees, f, indent=2, ensure_ascii=False)
         # os.fsync(f.fileno())
     # os.sync()
     print("\nSaved all trees to trees.json")
