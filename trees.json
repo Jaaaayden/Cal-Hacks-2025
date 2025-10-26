@@ -1,148 +1,89 @@
 {
-  "word": "test",
+  "word": "college",
   "children": [
     {
-<<<<<<< Updated upstream
-      "word": "algebra",
+      "word": "university",
       "children": [
         {
-          "word": "mathematics",
+          "word": "undergraduate",
           "children": [
             {
-              "word": "physics",
+              "word": "postgraduate",
               "children": []
             },
             {
-              "word": "science",
+              "word": "doctoral",
               "children": []
             },
             {
-              "word": "biology",
+              "word": "baccalaureate",
               "children": []
             },
             {
-              "word": "linguistics",
-=======
-      "word": "exam",
-      "children": [
-        {
-          "word": "dumps",
-          "children": [
-            {
-              "word": "offerS",
-              "children": []
-            },
-            {
-              "word": "answers",
-              "children": []
-            },
-            {
-              "word": "Retests",
-              "children": []
-            },
-            {
-              "word": "simulations",
->>>>>>> Stashed changes
+              "word": "coursework",
               "children": []
             }
           ]
         },
         {
-<<<<<<< Updated upstream
-          "word": "trigonometric",
+          "word": "seminary",
           "children": [
             {
-              "word": "algebraic",
+              "word": "seminarian",
               "children": []
             },
             {
-              "word": "Logarithmic",
+              "word": "yeshiva",
               "children": []
             },
             {
-              "word": "cosine",
+              "word": "convent",
               "children": []
             },
             {
-              "word": "logarithms",
-=======
-          "word": "certification",
-          "children": [
-            {
-              "word": "certificating",
-              "children": []
-            },
-            {
-              "word": "certificate",
-              "children": []
-            },
-            {
-              "word": "training",
-              "children": []
-            },
-            {
-              "word": "proctored",
->>>>>>> Stashed changes
+              "word": "parochial",
               "children": []
             }
           ]
         },
         {
-<<<<<<< Updated upstream
-          "word": "quadratic",
+          "word": "institute",
           "children": [
             {
-              "word": "polynomial",
+              "word": "academy",
               "children": []
             },
             {
-              "word": "equations",
+              "word": "institution",
               "children": []
             },
             {
-              "word": "algebraical",
+              "word": "mba",
               "children": []
             },
             {
-              "word": "monomial",
-=======
-          "word": "Cram",
-          "children": [
-            {
-              "word": "SofTest",
-              "children": []
-            },
-            {
-              "word": "PreTest",
->>>>>>> Stashed changes
+              "word": "education",
               "children": []
             }
           ]
         },
         {
-<<<<<<< Updated upstream
-          "word": "geometry",
+          "word": "polytechnic",
           "children": [
             {
-              "word": "geometer",
+              "word": "matriculation",
               "children": []
             },
             {
-              "word": "conics",
+              "word": "unaccredited",
               "children": []
             },
             {
-              "word": "hyperbola",
+              "word": "vocational",
               "children": []
             },
             {
-              "word": "trigonometrical",
-=======
-          "word": "cbt",
-          "children": [
-            {
-              "word": "simulator",
->>>>>>> Stashed changes
+              "word": "enrolment",
               "children": []
             }
           ]
@@ -150,442 +91,266 @@
       ]
     },
     {
-<<<<<<< Updated upstream
-      "word": "arithmetic",
+      "word": "school",
       "children": [
         {
-          "word": "mathematical",
-          "children": [
-            {
-              "word": "numerical",
-              "children": []
-            },
-            {
-              "word": "computational",
-              "children": []
-            },
-            {
-              "word": "arithmetical",
-              "children": []
-            },
-            {
-              "word": "statistical",
-=======
-      "word": "quiz",
-      "children": [
-        {
-          "word": "questionnaire",
-          "children": [
-            {
-              "word": "survey",
-              "children": []
-            },
-            {
-              "word": "assessment",
-              "children": []
-            },
-            {
-              "word": "psychometric",
-              "children": []
-            },
-            {
-              "word": "checklist",
->>>>>>> Stashed changes
-              "children": []
-            }
-          ]
-        },
-        {
-<<<<<<< Updated upstream
-          "word": "integers",
-          "children": [
-            {
-              "word": "divisors",
-              "children": []
-            },
-            {
-              "word": "hexadecimals",
-              "children": []
-            },
-            {
-              "word": "multiplicand",
-              "children": []
-            },
-            {
-              "word": "numerators",
-=======
-          "word": "questions",
-          "children": []
-        },
-        {
-          "word": "prep",
-          "children": [
-            {
-              "word": "SATs",
-              "children": []
-            },
-            {
-              "word": "GRE",
-              "children": []
-            },
-            {
-              "word": "lab",
-              "children": []
-            },
-            {
-              "word": "examinations",
->>>>>>> Stashed changes
-              "children": []
-            }
-          ]
-        },
-        {
-<<<<<<< Updated upstream
-          "word": "computations",
-          "children": [
-            {
-              "word": "calculations",
-              "children": []
-            },
-            {
-              "word": "compute",
-              "children": []
-            },
-            {
-              "word": "factorizations",
-              "children": []
-            },
-            {
-              "word": "computable",
-              "children": []
-            }
-          ]
-        },
-        {
-          "word": "decimals",
-          "children": [
-            {
-              "word": "fractions",
-              "children": []
-            },
-            {
-              "word": "percents",
-              "children": []
-            },
-            {
-              "word": "binomials",
-              "children": []
-            },
-            {
-              "word": "subtract",
-=======
-          "word": "poll",
-          "children": [
-            {
-              "word": "report",
-              "children": []
-            },
-            {
-              "word": "study",
->>>>>>> Stashed changes
-              "children": []
-            }
-          ]
-        }
-      ]
-    },
-    {
-<<<<<<< Updated upstream
-      "word": "worksheets",
-      "children": [
-        {
-          "word": "workbooks",
-          "children": [
-            {
-              "word": "curriculums",
-              "children": []
-            },
-            {
-              "word": "classroom",
-              "children": []
-            },
-            {
-              "word": "alouds",
-              "children": []
-            },
-            {
-              "word": "textbooks",
-=======
-      "word": "screening",
-      "children": [
-        {
-          "word": "mammography",
-          "children": [
-            {
-              "word": "mammogram",
-              "children": []
-            },
-            {
-              "word": "cytology",
-              "children": []
-            },
-            {
-              "word": "prediagnostic",
->>>>>>> Stashed changes
-              "children": []
-            }
-          ]
-        },
-        {
-<<<<<<< Updated upstream
-          "word": "flashcards",
-          "children": [
-            {
-              "word": "vocabulary",
-              "children": []
-            },
-            {
-              "word": "memorize",
-              "children": []
-            },
-            {
-              "word": "phonics",
-              "children": []
-            },
-            {
-              "word": "crosswords",
-=======
-          "word": "testing",
-          "children": [
-            {
-              "word": "testers",
-              "children": []
-            },
-            {
-              "word": "inspection",
-              "children": []
-            },
-            {
-              "word": "laboratory",
-              "children": []
-            },
-            {
-              "word": "calibration",
->>>>>>> Stashed changes
-              "children": []
-            }
-          ]
-        },
-        {
-<<<<<<< Updated upstream
-          "word": "printable",
+          "word": "kindergarten",
           "children": [
             {
               "word": "preschool",
               "children": []
             },
             {
-              "word": "cursive",
-=======
-          "word": "diagnostic",
-          "children": [
-            {
-              "word": "serological",
+              "word": "grades",
               "children": []
             },
             {
-              "word": "diagnose",
+              "word": "homeschool",
               "children": []
             },
             {
-              "word": "workup",
-              "children": []
-            },
-            {
-              "word": "ultrasound",
->>>>>>> Stashed changes
+              "word": "homeroom",
               "children": []
             }
           ]
         },
         {
-<<<<<<< Updated upstream
-          "word": "powerpoints",
+          "word": "elementary",
           "children": [
             {
-              "word": "quizes",
+              "word": "prekindergarten",
               "children": []
             },
             {
-              "word": "practicals",
+              "word": "secondary",
               "children": []
             },
             {
-              "word": "esl",
+              "word": "mathematics",
               "children": []
             },
             {
-              "word": "ict",
+              "word": "pupils",
               "children": []
             }
           ]
-=======
-          "word": "biopsy",
-          "children": []
->>>>>>> Stashed changes
+        },
+        {
+          "word": "teacher",
+          "children": [
+            {
+              "word": "tutor",
+              "children": []
+            },
+            {
+              "word": "student",
+              "children": []
+            },
+            {
+              "word": "teaching",
+              "children": []
+            },
+            {
+              "word": "librarian",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "classroom",
+          "children": [
+            {
+              "word": "curriculum",
+              "children": []
+            },
+            {
+              "word": "tutoring",
+              "children": []
+            },
+            {
+              "word": "schooling",
+              "children": []
+            },
+            {
+              "word": "academic",
+              "children": []
+            }
+          ]
         }
       ]
     },
     {
-<<<<<<< Updated upstream
-      "word": "trigonometry",
+      "word": "graduate",
       "children": [
         {
-          "word": "integrals",
+          "word": "graduating",
           "children": [
             {
-              "word": "theorems",
+              "word": "graduated",
               "children": []
             },
             {
-              "word": "commutative",
+              "word": "enrolling",
               "children": []
             },
             {
-              "word": "trinomials",
+              "word": "freshman",
               "children": []
             },
             {
-              "word": "exponentials",
-=======
-      "word": "evaluation",
+              "word": "valedictorian",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "doctorate",
+          "children": [
+            {
+              "word": "bachelors",
+              "children": []
+            },
+            {
+              "word": "degree",
+              "children": []
+            },
+            {
+              "word": "professor",
+              "children": []
+            },
+            {
+              "word": "diploma",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "PhD",
+          "children": [
+            {
+              "word": "postdoctoral",
+              "children": []
+            },
+            {
+              "word": "MFA",
+              "children": []
+            },
+            {
+              "word": "LLB",
+              "children": []
+            },
+            {
+              "word": "majoring",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "enrolled",
+          "children": [
+            {
+              "word": "matriculated",
+              "children": []
+            },
+            {
+              "word": "attending",
+              "children": []
+            },
+            {
+              "word": "enrollment",
+              "children": []
+            },
+            {
+              "word": "semesters",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "undergrad",
       "children": [
         {
-          "word": "evaluate",
+          "word": "premed",
           "children": [
             {
-              "word": "assess",
+              "word": "dietetics",
               "children": []
             },
             {
-              "word": "examine",
+              "word": "minoring",
               "children": []
             },
             {
-              "word": "validate",
+              "word": "gpa",
               "children": []
             },
             {
-              "word": "inspect",
->>>>>>> Stashed changes
+              "word": "flunking",
               "children": []
             }
           ]
         },
         {
-<<<<<<< Updated upstream
-          "word": "cosecant",
+          "word": "profs",
           "children": [
             {
-              "word": "biquadratic",
+              "word": "lecturers",
               "children": []
             },
             {
-              "word": "radians",
+              "word": "faculty",
               "children": []
             },
             {
-              "word": "quaternions",
+              "word": "univs",
               "children": []
             },
             {
-              "word": "cubics",
-=======
-          "word": "summative",
-          "children": [
-            {
-              "word": "rubric",
-              "children": []
-            },
-            {
-              "word": "examinational",
-              "children": []
-            },
-            {
-              "word": "pretesting",
->>>>>>> Stashed changes
+              "word": "alumnis",
               "children": []
             }
           ]
         },
         {
-<<<<<<< Updated upstream
-          "word": "graphing",
+          "word": "postdocs",
           "children": [
             {
-              "word": "calculator",
+              "word": "professorships",
               "children": []
             },
             {
-              "word": "precalculate",
+              "word": "interns",
               "children": []
             },
             {
-              "word": "factorizing",
+              "word": "fellowships",
               "children": []
             },
             {
-              "word": "factorials",
-=======
-          "word": "benchmarking",
-          "children": [
-            {
-              "word": "baseline",
-              "children": []
-            },
-            {
-              "word": "measurement",
-              "children": []
-            },
-            {
-              "word": "yardstick",
-              "children": []
-            },
-            {
-              "word": "sampling",
->>>>>>> Stashed changes
+              "word": "stipends",
               "children": []
             }
           ]
         },
         {
-<<<<<<< Updated upstream
-          "word": "hyperbolae",
+          "word": "majored",
           "children": [
             {
-              "word": "algebraists",
+              "word": "minored",
               "children": []
             },
             {
-              "word": "infinitesimals",
-=======
-          "word": "monitoring",
-          "children": [
-            {
-              "word": "measuring",
+              "word": "excelled",
               "children": []
             },
             {
-              "word": "detection",
+              "word": "studying",
               "children": []
             },
             {
-              "word": "calibrating",
-              "children": []
-            },
-            {
-              "word": "verification",
->>>>>>> Stashed changes
+              "word": "flunked",
               "children": []
             }
           ]
