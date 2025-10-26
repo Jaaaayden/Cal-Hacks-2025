@@ -1,7 +1,7 @@
 import * as THREE from 'https://esm.sh/three@0.152.2';
-import { OrbitControls } from 'https://esm.sh/three@0.152.2/examples/jsm/controls/OrbitControls.js';
+import { OrbitControls } from 'https://esm.sh/three@0.152.2/examples/jsm/controls/OrbitControls.js'
 
-// --- Ensure Global Variables are declared at the top level ---
+// --- Global Variables ---
 let renderer, camera, controls, scene;
 
 // --- Get HTML Elements ---
@@ -9,40 +9,40 @@ const loadingOverlay = document.getElementById('loading-overlay');
 const sceneContainer = document.getElementById('scene-container');
 
 
-// --- Main Execution ---
+// --- Main Execution (using your provided loading logic) ---
 document.addEventListener('DOMContentLoaded', async () => {
     const urlParams = new URLSearchParams(window.location.search);
-    const word = urlParams.get('word');
+    // Get word from URL, default to 'sample' if missing
+    const word = urlParams.get('word') || 'sample';
 
-    if (!word) {
+    if (!word && word !== 'sample') { // Allow 'sample' even if not in URL
         loadingOverlay.innerHTML = '<p style="color: red;">Error: No word specified in URL.</p>';
         return;
     }
 
-    console.log(`Received word from URL: ${word}`);
-    // Check if the p element exists before setting textContent
+    console.log(`Received word from URL: ${word}. Loading sample tree.`);
     const loadingText = loadingOverlay.querySelector('p');
     if (loadingText) {
-        loadingText.textContent = `Generating tree for "${word}"...`;
+        loadingText.textContent = `Loading sample tree...`; // Adjusted text
     }
 
-
     try {
-        const res = await fetch('tree-test.json'); // Using test data [cite: Cal-Hacks-2025/tree-test.json]
+        // --- ✅ Fetch sampleTree.json ---
+        const res = await fetch('sampleTree.json'); // [cite: Cal-Hacks-2025/sampleTree.json]
         if (!res.ok) {
-            throw new Error(`Could not load tree-test.json: ${res.statusText}`);
+            throw new Error(`Could not load sampleTree.json: ${res.statusText}`);
         }
         const treeData = await res.json();
-        console.log('Loaded local test data:', treeData);
+        console.log('Loaded sampleTree.json data:', treeData);
+        // --- END OF CHANGE ---
 
         initTree(treeData); // Call initTree
 
         // Hide loader AFTER initTree completes successfully and scene is ready
+        // (Using your provided timing logic)
         if (sceneContainer && !sceneContainer.classList.contains('hidden') && renderer) {
-            // Give the browser a tiny moment to render the first frame before hiding loader
             requestAnimationFrame(() => {
                 loadingOverlay.classList.add('hidden');
-                // ✅ Force one more frame after overlay is hidden
                 setTimeout(() => {
                     if (renderer && scene && camera) {
                         renderer.render(scene, camera);
@@ -50,21 +50,18 @@ document.addEventListener('DOMContentLoaded', async () => {
                 }, 50);
             });
         } else if (!sceneContainer || !renderer) {
-             // Handle cases where initTree might have failed silently earlier
-            throw new Error("Scene initialization failed or container not found.");
+             throw new Error("Scene initialization failed or container not found.");
         }
 
     } catch (err) {
-       // ... (error handling remains the same) ...
-        console.error('Error during tree generation:', err);
-        loadingOverlay.innerHTML = `<p style="color: red;">Error generating tree: ${err.message}</p>`;
-        // Ensure loading overlay stays visible if there's an error
-        loadingOverlay.classList.remove('hidden');
-        if (sceneContainer) sceneContainer.classList.add('hidden'); // Hide scene container on error
+       console.error('Error during tree generation:', err);
+       loadingOverlay.innerHTML = `<p style="color: red;">Error generating tree: ${err.message}</p>`;
+       loadingOverlay.classList.remove('hidden');
+       if (sceneContainer) sceneContainer.classList.add('hidden');
     }
 });
 
-// --- RENDERER INITIALIZATION (MODIFIED) ---
+// --- RENDERER INITIALIZATION (using your provided timing logic) ---
 function initTree(treeData) {
     if (!sceneContainer) {
         console.error("Scene container element not found!");
@@ -73,24 +70,18 @@ function initTree(treeData) {
     }
 
     try {
-        // remove old canvas if present
         const oldCanvas = sceneContainer.querySelector('canvas');
         if (oldCanvas) sceneContainer.removeChild(oldCanvas);
 
-        // create scene & camera
         scene = new THREE.Scene();
         scene.background = new THREE.Color(0x121212);
         camera = new THREE.PerspectiveCamera(50, 2, 0.1, 1000); // temp aspect
         camera.position.set(0, 5, 30);
 
-        // create renderer but don't size it yet
         renderer = new THREE.WebGLRenderer({ antialias: true });
         renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-
-        // append canvas BEFORE sizing so CSS rules apply
         sceneContainer.appendChild(renderer.domElement);
 
-        // lighting + controls
         const ambient = new THREE.AmbientLight(0xffffff, 0.8);
         scene.add(ambient);
         const dir = new THREE.DirectionalLight(0xffffff, 1);
@@ -102,37 +93,30 @@ function initTree(treeData) {
         controls.minDistance = 2.0;
         controls.maxDistance = 50.0;
 
-        // Render tree objects into the scene
+        // Render tree objects into the scene using sampleTree data
         renderTree(treeData, scene);
 
-        // --- IMPORTANT: make container visible BEFORE sizing/rendering ---
-        // If `.hidden` uses display:none, clientWidth will be 0 until it's removed.
+        // Make container visible BEFORE sizing/rendering
         sceneContainer.classList.remove('hidden');
 
-        // Now wait for next animation frame so layout has a chance to apply.
+        // Wait for next animation frame for layout
         requestAnimationFrame(() => {
-            // Defensive: if computed size is zero, fallback to window size.
             const w = Math.max(1, sceneContainer.clientWidth || Math.floor(window.innerWidth * 0.75));
             const h = Math.max(1, sceneContainer.clientHeight || Math.floor(window.innerHeight * 0.75));
 
             camera.aspect = w / h;
             camera.updateProjectionMatrix();
-
-            renderer.setSize(w, h, false); // false -> don't update style, only drawing buffer
-            // If you want the canvas element to match CSS width/height, you can set renderer.domElement.style.width/height = '100%'
-
-            // ensure controls knows about the new size
+            renderer.setSize(w, h, false);
             controls.update();
 
-            // hide loader (if using a fade, this starts the fade)
+            // Hide loader (using your timing logic)
             if (loadingOverlay) loadingOverlay.classList.add('hidden');
 
-            // Force a render after the overlay actually disappears / layout stabilizes.
-            // Using both requestAnimationFrame + small setTimeout covers both immediate and CSS-transition cases.
+            // Force renders (using your timing logic)
             requestAnimationFrame(() => renderer.render(scene, camera));
             setTimeout(() => { if (renderer) renderer.render(scene, camera); }, 60);
 
-            // start animation loop
+            // Start animation loop
             animate();
         });
 
@@ -147,33 +131,32 @@ function initTree(treeData) {
 
 // --- Handle window resizing ---
 window.addEventListener('resize', () => {
-    // Check variables exist before using them
     if (sceneContainer && camera && renderer) {
-        // Update camera aspect ratio
         camera.aspect = sceneContainer.clientWidth / sceneContainer.clientHeight;
         camera.updateProjectionMatrix();
-        // Update renderer size
         renderer.setSize(sceneContainer.clientWidth, sceneContainer.clientHeight);
-        // No extra render needed here, animate loop handles it
     }
 });
 
 // --- Animation loop ---
 function animate() {
-    // Check variables exist before using them
     if (!renderer || !scene || !camera || !controls) return;
-
-    requestAnimationFrame(animate); // Continue the loop
-    controls.update(); // Update controls (needed for damping)
-    renderer.render(scene, camera); // Render the current frame
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
 }
 
-// --- RENDER TREE (No changes needed here) ---
+// --- RENDER TREE (Using .word for sampleTree.json) ---
 function renderTree(treeNode, scene, position = [0, 0, 0], depth = 0) {
-    if (!treeNode || !treeNode.name) return;
-    new VisualizedWordNode(treeNode.name, scene, position);
+    // --- ✅ Changed back to .word ---
+    if (!treeNode || !treeNode.word) return;
+
+    new VisualizedWordNode(treeNode.word, scene, position);
+
     const children = Array.isArray(treeNode.children) ? treeNode.children : [];
     if (children.length === 0) return;
+
+    // --- Uses the OLDER layout generator function (pasted below) ---
     const gen = generateNextPosition(position, depth, children.length);
     for (const child of children) {
         const nextpos = gen.next().value;
@@ -183,7 +166,7 @@ function renderTree(treeNode, scene, position = [0, 0, 0], depth = 0) {
 }
 
 
-// --- Helper functions and Classes (No changes needed here) ---
+// --- Helper functions and Classes (getRandomFloat, createTextSprite, etc. - No changes) ---
 function getRandomFloat(min, max) {
   return Math.random() * (max - min) + min;
 }
@@ -245,7 +228,7 @@ class VisualizedWordNode {
         this.label = createTextSprite(word);
         this.label.position.set(position[0], position[1] + 0.7, position[2]);
         scene.add(this.label);
-        this._scene = scene; // Keep reference if needed for interaction later
+        this._scene = scene;
     }
 }
 
@@ -259,17 +242,56 @@ class VisualizedBranch {
     }
 }
 
+// --- ✅ THIS IS THE OLD POSITION GENERATOR FUNCTION (RESTORED) ---
 function* generateNextPosition(parentPos, parentDepth, totalChildren) {
-    const yStep = 5.0 - parentDepth * 0.8; // Decreasing vertical step
-    const radius = 2.5 + parentDepth * 2.5; // Increasing horizontal spread
+    let yOffset = 0.0;
+    let xOffset = 0.0;
+    let zOffset = 0.0;
+
+    switch (parentDepth) {
+        case 0: yOffset = getRandomFloat(3.0, 4.5); break;
+        case 1: yOffset = getRandomFloat(2.0, 3.0); break;
+        case 2: yOffset = getRandomFloat(0.0, 1.5); break;
+        default: yOffset = getRandomFloat(-2.0, 2.0); break;
+    }
+
+    let baseAngle, baseAdvance;
+    if (parentDepth > 1) {
+        const px = parentPos[0], pz = parentPos[2];
+        baseAngle = (px === 0 && pz === 0) ? getRandomFloat(0, Math.PI * 2) : Math.atan2(pz, px);
+        baseAdvance = 0.9 + parentDepth * 0.6;
+    }
+
     for (let i = 0; i < totalChildren; i++) {
-        const angle = (i / totalChildren) * Math.PI * 2; // Even angular distribution
-        const jitter = Math.random() * 0.6 - 0.3; // Randomness in angle/radius
-        // Calculate child position relative to parent
-        const x = parentPos[0] + Math.cos(angle + jitter) * (radius + jitter * 2);
-        const y = parentPos[1] - (yStep + Math.random() * 0.5); // Go downwards, with jitter
-        const z = parentPos[2] + Math.sin(angle + jitter) * (radius + jitter * 2);
-        yield [x, y, z]; // Return the calculated position
+        if (parentDepth <= 1) {
+            const TAU = Math.PI * 2;
+            const spacing = TAU / Math.max(1, totalChildren);
+            const angleJitter = spacing * 0.25;
+            let baseRadius;
+            switch (parentDepth) {
+                case 0: baseRadius = getRandomFloat(1.2, 2.0); break;
+                case 1: baseRadius = getRandomFloat(1.8, 2.5); break;
+                default: baseRadius = getRandomFloat(2.2, 3.0); break;
+            }
+            const angle = i * spacing + getRandomFloat(-angleJitter, angleJitter);
+            const radius = baseRadius * getRandomFloat(0.85, 1.15);
+            xOffset = Math.cos(angle) * radius;
+            zOffset = Math.sin(angle) * radius;
+        } else {
+            const spreadAngle = Math.PI * 130 / 180;
+            const startAngle = baseAngle - spreadAngle / 2;
+            const t = totalChildren === 1 ? 0.5 : i / (totalChildren - 1);
+            let angle = startAngle + t * spreadAngle;
+            angle += getRandomFloat(-0.08, 0.08);
+            const forward = (baseAdvance + Math.abs(t - 0.5) * 0.18) * getRandomFloat(0.9, 1.12);
+            const perpJitter = getRandomFloat(-0.28, 0.28) * (1 / (parentDepth + 1));
+            xOffset = Math.cos(angle) * forward + perpJitter * Math.cos(angle + Math.PI / 2);
+            zOffset = Math.sin(angle) * forward + perpJitter * Math.sin(angle + Math.PI / 2);
+            const rise = 1.2 / (parentDepth + 0.5);
+            const droop = -Math.log(parentDepth + 1) * 0.1;
+            const yjitter = getRandomFloat(-0.15, 0.25);
+            yOffset = rise + droop + yjitter;
+        }
+        yield [parentPos[0] + xOffset, parentPos[1] + yOffset, parentPos[2] + zOffset];
     }
 }
-
