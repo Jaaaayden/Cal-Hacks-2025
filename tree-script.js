@@ -28,12 +28,12 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     try {
         // --- ✅ Fetch sampleTree.json ---
-        const res = await fetch('sampleTree.json'); // [cite: Cal-Hacks-2025/sampleTree.json]
+        const res = await fetch('trees.json'); // [cite: Cal-Hacks-2025/sampleTree.json]
         if (!res.ok) {
-            throw new Error(`Could not load sampleTree.json: ${res.statusText}`);
+            throw new Error(`Could not load trees.json: ${res.statusText}`);
         }
         const treeData = await res.json();
-        console.log('Loaded sampleTree.json data:', treeData);
+        console.log('Loaded trees.json data:', treeData);
         // --- END OF CHANGE ---
 
         initTree(treeData); // Call initTree

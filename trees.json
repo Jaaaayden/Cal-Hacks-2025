@@ -1,448 +1,361 @@
 {
-  "college": {
-    "token": "college",
-    "score_to_parent": null,
-    "children": [
-      {
-        "token": "university",
-        "score_to_parent": 0.7531615495681763,
-        "children": [
-          {
-            "token": "undergraduate",
-            "score_to_parent": 0.6205791234970093,
-            "children": [
-              {
-                "token": "postgraduate",
-                "score_to_parent": 0.7288476824760437,
-                "children": []
-              },
-              {
-                "token": "doctoral",
-                "score_to_parent": 0.6959782838821411,
-                "children": []
-              },
-              {
-                "token": "baccalaureate",
-                "score_to_parent": 0.6783730387687683,
-                "children": []
-              },
-              {
-                "token": "coursework",
-                "score_to_parent": 0.640841007232666,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "seminary",
-            "score_to_parent": 0.6090376377105713,
-            "children": [
-              {
-                "token": "seminarian",
-                "score_to_parent": 0.6779248118400574,
-                "children": []
-              },
-              {
-                "token": "yeshiva",
-                "score_to_parent": 0.545525848865509,
-                "children": []
-              },
-              {
-                "token": "convent",
-                "score_to_parent": 0.5331864356994629,
-                "children": []
-              },
-              {
-                "token": "parochial",
-                "score_to_parent": 0.48470339179039,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "institute",
-            "score_to_parent": 0.5990727543830872,
-            "children": [
-              {
-                "token": "academy",
-                "score_to_parent": 0.5551165342330933,
-                "children": []
-              },
-              {
-                "token": "institution",
-                "score_to_parent": 0.5461007356643677,
-                "children": []
-              },
-              {
-                "token": "mba",
-                "score_to_parent": 0.43928995728492737,
-                "children": []
-              },
-              {
-                "token": "education",
-                "score_to_parent": 0.42122700810432434,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "polytechnic",
-            "score_to_parent": 0.5725950002670288,
-            "children": [
-              {
-                "token": "matriculation",
-                "score_to_parent": 0.49589863419532776,
-                "children": []
-              },
-              {
-                "token": "unaccredited",
-                "score_to_parent": 0.4502190351486206,
-                "children": []
-              },
-              {
-                "token": "vocational",
-                "score_to_parent": 0.4353175163269043,
-                "children": []
-              },
-              {
-                "token": "enrolment",
-                "score_to_parent": 0.43406182527542114,
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "token": "school",
-        "score_to_parent": 0.7122510671615601,
-        "children": [
-          {
-            "token": "kindergarten",
-            "score_to_parent": 0.6669527292251587,
-            "children": [
-              {
-                "token": "preschool",
-                "score_to_parent": 0.8600211143493652,
-                "children": []
-              },
-              {
-                "token": "grades",
-                "score_to_parent": 0.6044634580612183,
-                "children": []
-              },
-              {
-                "token": "homeschool",
-                "score_to_parent": 0.5631323456764221,
-                "children": []
-              },
-              {
-                "token": "homeroom",
-                "score_to_parent": 0.5432451367378235,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "elementary",
-            "score_to_parent": 0.6451254487037659,
-            "children": [
-              {
-                "token": "prekindergarten",
-                "score_to_parent": 0.549964427947998,
-                "children": []
-              },
-              {
-                "token": "secondary",
-                "score_to_parent": 0.5456680059432983,
-                "children": []
-              },
-              {
-                "token": "mathematics",
-                "score_to_parent": 0.48971110582351685,
-                "children": []
-              },
-              {
-                "token": "pupils",
-                "score_to_parent": 0.4861534833908081,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "teacher",
-            "score_to_parent": 0.5754554271697998,
-            "children": [
-              {
-                "token": "tutor",
-                "score_to_parent": 0.669529914855957,
-                "children": []
-              },
-              {
-                "token": "student",
-                "score_to_parent": 0.5936867594718933,
-                "children": []
-              },
-              {
-                "token": "teaching",
-                "score_to_parent": 0.5703909397125244,
-                "children": []
-              },
-              {
-                "token": "librarian",
-                "score_to_parent": 0.5472679138183594,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "classroom",
-            "score_to_parent": 0.5726727843284607,
-            "children": [
-              {
-                "token": "curriculum",
-                "score_to_parent": 0.6643244028091431,
-                "children": []
-              },
-              {
-                "token": "tutoring",
-                "score_to_parent": 0.5387064814567566,
-                "children": []
-              },
-              {
-                "token": "schooling",
-                "score_to_parent": 0.5105502605438232,
-                "children": []
-              },
-              {
-                "token": "academic",
-                "score_to_parent": 0.4747898578643799,
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "token": "graduate",
-        "score_to_parent": 0.6129909753799438,
-        "children": [
-          {
-            "token": "graduating",
-            "score_to_parent": 0.720551609992981,
-            "children": [
-              {
-                "token": "graduated",
-                "score_to_parent": 0.8108603358268738,
-                "children": []
-              },
-              {
-                "token": "enrolling",
-                "score_to_parent": 0.5827853679656982,
-                "children": []
-              },
-              {
-                "token": "freshman",
-                "score_to_parent": 0.5331384539604187,
-                "children": []
-              },
-              {
-                "token": "valedictorian",
-                "score_to_parent": 0.5316691994667053,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "doctorate",
-            "score_to_parent": 0.6586047410964966,
-            "children": [
-              {
-                "token": "bachelors",
-                "score_to_parent": 0.6330013275146484,
-                "children": []
-              },
-              {
-                "token": "degree",
-                "score_to_parent": 0.6069908738136292,
-                "children": []
-              },
-              {
-                "token": "professor",
-                "score_to_parent": 0.592217206954956,
-                "children": []
-              },
-              {
-                "token": "diploma",
-                "score_to_parent": 0.590546727180481,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "PhD",
-            "score_to_parent": 0.6182384490966797,
-            "children": [
-              {
-                "token": "postdoctoral",
-                "score_to_parent": 0.6523555517196655,
-                "children": []
-              },
-              {
-                "token": "MFA",
-                "score_to_parent": 0.5526081919670105,
-                "children": []
-              },
-              {
-                "token": "LLB",
-                "score_to_parent": 0.5356813669204712,
-                "children": []
-              },
-              {
-                "token": "majoring",
-                "score_to_parent": 0.45883244276046753,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "enrolled",
-            "score_to_parent": 0.6162049770355225,
-            "children": [
-              {
-                "token": "matriculated",
-                "score_to_parent": 0.583877444267273,
-                "children": []
-              },
-              {
-                "token": "attending",
-                "score_to_parent": 0.5805916786193848,
-                "children": []
-              },
-              {
-                "token": "enrollment",
-                "score_to_parent": 0.5622609257698059,
-                "children": []
-              },
-              {
-                "token": "semesters",
-                "score_to_parent": 0.4843483865261078,
-                "children": []
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "token": "undergrad",
-        "score_to_parent": 0.5959382057189941,
-        "children": [
-          {
-            "token": "premed",
-            "score_to_parent": 0.597750723361969,
-            "children": [
-              {
-                "token": "dietetics",
-                "score_to_parent": 0.47161388397216797,
-                "children": []
-              },
-              {
-                "token": "minoring",
-                "score_to_parent": 0.45162612199783325,
-                "children": []
-              },
-              {
-                "token": "gpa",
-                "score_to_parent": 0.4346194863319397,
-                "children": []
-              },
-              {
-                "token": "flunking",
-                "score_to_parent": 0.42873692512512207,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "profs",
-            "score_to_parent": 0.5835351943969727,
-            "children": [
-              {
-                "token": "lecturers",
-                "score_to_parent": 0.568977952003479,
-                "children": []
-              },
-              {
-                "token": "faculty",
-                "score_to_parent": 0.497116357088089,
-                "children": []
-              },
-              {
-                "token": "univs",
-                "score_to_parent": 0.47352251410484314,
-                "children": []
-              },
-              {
-                "token": "alumnis",
-                "score_to_parent": 0.46558764576911926,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "postdocs",
-            "score_to_parent": 0.5597543716430664,
-            "children": [
-              {
-                "token": "professorships",
-                "score_to_parent": 0.578339695930481,
-                "children": []
-              },
-              {
-                "token": "interns",
-                "score_to_parent": 0.576276421546936,
-                "children": []
-              },
-              {
-                "token": "fellowships",
-                "score_to_parent": 0.5639925003051758,
-                "children": []
-              },
-              {
-                "token": "stipends",
-                "score_to_parent": 0.5611793994903564,
-                "children": []
-              }
-            ]
-          },
-          {
-            "token": "majored",
-            "score_to_parent": 0.5438448190689087,
-            "children": [
-              {
-                "token": "minored",
-                "score_to_parent": 0.666348934173584,
-                "children": []
-              },
-              {
-                "token": "excelled",
-                "score_to_parent": 0.5302937030792236,
-                "children": []
-              },
-              {
-                "token": "studying",
-                "score_to_parent": 0.4771413207054138,
-                "children": []
-              },
-              {
-                "token": "flunked",
-                "score_to_parent": 0.4640141725540161,
-                "children": []
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "word": "college",
+  "children": [
+    {
+      "word": "university",
+      "children": [
+        {
+          "word": "undergraduate",
+          "children": [
+            {
+              "word": "postgraduate",
+              "children": []
+            },
+            {
+              "word": "doctoral",
+              "children": []
+            },
+            {
+              "word": "baccalaureate",
+              "children": []
+            },
+            {
+              "word": "coursework",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "seminary",
+          "children": [
+            {
+              "word": "seminarian",
+              "children": []
+            },
+            {
+              "word": "yeshiva",
+              "children": []
+            },
+            {
+              "word": "convent",
+              "children": []
+            },
+            {
+              "word": "parochial",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "institute",
+          "children": [
+            {
+              "word": "academy",
+              "children": []
+            },
+            {
+              "word": "institution",
+              "children": []
+            },
+            {
+              "word": "mba",
+              "children": []
+            },
+            {
+              "word": "education",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "polytechnic",
+          "children": [
+            {
+              "word": "matriculation",
+              "children": []
+            },
+            {
+              "word": "unaccredited",
+              "children": []
+            },
+            {
+              "word": "vocational",
+              "children": []
+            },
+            {
+              "word": "enrolment",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "school",
+      "children": [
+        {
+          "word": "kindergarten",
+          "children": [
+            {
+              "word": "preschool",
+              "children": []
+            },
+            {
+              "word": "grades",
+              "children": []
+            },
+            {
+              "word": "homeschool",
+              "children": []
+            },
+            {
+              "word": "homeroom",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "elementary",
+          "children": [
+            {
+              "word": "prekindergarten",
+              "children": []
+            },
+            {
+              "word": "secondary",
+              "children": []
+            },
+            {
+              "word": "mathematics",
+              "children": []
+            },
+            {
+              "word": "pupils",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "teacher",
+          "children": [
+            {
+              "word": "tutor",
+              "children": []
+            },
+            {
+              "word": "student",
+              "children": []
+            },
+            {
+              "word": "teaching",
+              "children": []
+            },
+            {
+              "word": "librarian",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "classroom",
+          "children": [
+            {
+              "word": "curriculum",
+              "children": []
+            },
+            {
+              "word": "tutoring",
+              "children": []
+            },
+            {
+              "word": "schooling",
+              "children": []
+            },
+            {
+              "word": "academic",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "graduate",
+      "children": [
+        {
+          "word": "graduating",
+          "children": [
+            {
+              "word": "graduated",
+              "children": []
+            },
+            {
+              "word": "enrolling",
+              "children": []
+            },
+            {
+              "word": "freshman",
+              "children": []
+            },
+            {
+              "word": "valedictorian",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "doctorate",
+          "children": [
+            {
+              "word": "bachelors",
+              "children": []
+            },
+            {
+              "word": "degree",
+              "children": []
+            },
+            {
+              "word": "professor",
+              "children": []
+            },
+            {
+              "word": "diploma",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "PhD",
+          "children": [
+            {
+              "word": "postdoctoral",
+              "children": []
+            },
+            {
+              "word": "MFA",
+              "children": []
+            },
+            {
+              "word": "LLB",
+              "children": []
+            },
+            {
+              "word": "majoring",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "enrolled",
+          "children": [
+            {
+              "word": "matriculated",
+              "children": []
+            },
+            {
+              "word": "attending",
+              "children": []
+            },
+            {
+              "word": "enrollment",
+              "children": []
+            },
+            {
+              "word": "semesters",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "word": "undergrad",
+      "children": [
+        {
+          "word": "premed",
+          "children": [
+            {
+              "word": "dietetics",
+              "children": []
+            },
+            {
+              "word": "minoring",
+              "children": []
+            },
+            {
+              "word": "gpa",
+              "children": []
+            },
+            {
+              "word": "flunking",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "profs",
+          "children": [
+            {
+              "word": "lecturers",
+              "children": []
+            },
+            {
+              "word": "faculty",
+              "children": []
+            },
+            {
+              "word": "univs",
+              "children": []
+            },
+            {
+              "word": "alumnis",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "postdocs",
+          "children": [
+            {
+              "word": "professorships",
+              "children": []
+            },
+            {
+              "word": "interns",
+              "children": []
+            },
+            {
+              "word": "fellowships",
+              "children": []
+            },
+            {
+              "word": "stipends",
+              "children": []
+            }
+          ]
+        },
+        {
+          "word": "majored",
+          "children": [
+            {
+              "word": "minored",
+              "children": []
+            },
+            {
+              "word": "excelled",
+              "children": []
+            },
+            {
+              "word": "studying",
+              "children": []
+            },
+            {
+              "word": "flunked",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
 }
