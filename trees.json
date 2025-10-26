@@ -1,89 +1,81 @@
 {
-  "word": "college",
+  "word": "apple",
   "children": [
     {
-      "word": "university",
+      "word": "iphone",
       "children": [
         {
-          "word": "undergraduate",
+          "word": "ipad",
           "children": [
             {
-              "word": "postgraduate",
+              "word": "kindle",
               "children": []
             },
             {
-              "word": "doctoral",
+              "word": "app",
               "children": []
             },
             {
-              "word": "baccalaureate",
+              "word": "mac",
               "children": []
             },
             {
-              "word": "coursework",
+              "word": "tablet",
               "children": []
             }
           ]
         },
         {
-          "word": "seminary",
+          "word": "ipod",
           "children": [
             {
-              "word": "seminarian",
+              "word": "zunes",
               "children": []
             },
             {
-              "word": "yeshiva",
+              "word": "samsung",
               "children": []
             },
             {
-              "word": "convent",
+              "word": "htc",
               "children": []
             },
             {
-              "word": "parochial",
+              "word": "osx",
               "children": []
             }
           ]
         },
         {
-          "word": "institute",
+          "word": "android",
           "children": [
             {
-              "word": "academy",
+              "word": "verizon",
               "children": []
             },
             {
-              "word": "institution",
+              "word": "untethered",
               "children": []
             },
             {
-              "word": "mba",
+              "word": "blackberrying",
               "children": []
             },
             {
-              "word": "education",
+              "word": "unlocked",
               "children": []
             }
           ]
         },
         {
-          "word": "polytechnic",
+          "word": "jailbreak",
           "children": [
             {
-              "word": "matriculation",
+              "word": "AppleJack",
               "children": []
             },
             {
-              "word": "unaccredited",
-              "children": []
-            },
-            {
-              "word": "vocational",
-              "children": []
-            },
-            {
-              "word": "enrolment",
+              "word": "ipa",
               "children": []
             }
           ]
@@ -91,88 +83,88 @@
       ]
     },
     {
-      "word": "school",
+      "word": "blueberry",
       "children": [
         {
-          "word": "kindergarten",
+          "word": "raspberry",
           "children": [
             {
-              "word": "preschool",
+              "word": "strawberry",
               "children": []
             },
             {
-              "word": "grades",
+              "word": "blackcurrant",
               "children": []
             },
             {
-              "word": "homeschool",
+              "word": "apricot",
               "children": []
             },
             {
-              "word": "homeroom",
+              "word": "plum",
               "children": []
             }
           ]
         },
         {
-          "word": "elementary",
+          "word": "currant",
           "children": [
             {
-              "word": "prekindergarten",
+              "word": "boysenberry",
               "children": []
             },
             {
-              "word": "secondary",
+              "word": "elderberry",
               "children": []
             },
             {
-              "word": "mathematics",
+              "word": "nectarine",
               "children": []
             },
             {
-              "word": "pupils",
+              "word": "cherry",
               "children": []
             }
           ]
         },
         {
-          "word": "teacher",
+          "word": "rhubarb",
           "children": [
             {
-              "word": "tutor",
+              "word": "compote",
               "children": []
             },
             {
-              "word": "student",
+              "word": "celeriac",
               "children": []
             },
             {
-              "word": "teaching",
+              "word": "beetroot",
               "children": []
             },
             {
-              "word": "librarian",
+              "word": "broccoli",
               "children": []
             }
           ]
         },
         {
-          "word": "classroom",
+          "word": "peach",
           "children": [
             {
-              "word": "curriculum",
+              "word": "tangerine",
               "children": []
             },
             {
-              "word": "tutoring",
+              "word": "lychee",
               "children": []
             },
             {
-              "word": "schooling",
+              "word": "watermelon",
               "children": []
             },
             {
-              "word": "academic",
+              "word": "guava",
               "children": []
             }
           ]
@@ -180,88 +172,88 @@
       ]
     },
     {
-      "word": "graduate",
+      "word": "pear",
       "children": [
         {
-          "word": "graduating",
+          "word": "mango",
           "children": [
             {
-              "word": "graduated",
+              "word": "papaya",
               "children": []
             },
             {
-              "word": "enrolling",
+              "word": "tamarind",
               "children": []
             },
             {
-              "word": "freshman",
+              "word": "avocado",
               "children": []
             },
             {
-              "word": "valedictorian",
+              "word": "coconut",
               "children": []
             }
           ]
         },
         {
-          "word": "doctorate",
+          "word": "melon",
           "children": [
             {
-              "word": "bachelors",
+              "word": "cantaloupe",
               "children": []
             },
             {
-              "word": "degree",
+              "word": "cucumber",
               "children": []
             },
             {
-              "word": "professor",
+              "word": "kiwi",
               "children": []
             },
             {
-              "word": "diploma",
+              "word": "persimmon",
               "children": []
             }
           ]
         },
         {
-          "word": "PhD",
+          "word": "pomegranate",
           "children": [
             {
-              "word": "postdoctoral",
+              "word": "berry",
               "children": []
             },
             {
-              "word": "MFA",
+              "word": "grapefruit",
               "children": []
             },
             {
-              "word": "LLB",
+              "word": "sunflower",
               "children": []
             },
             {
-              "word": "majoring",
+              "word": "kumquat",
               "children": []
             }
           ]
         },
         {
-          "word": "enrolled",
+          "word": "pineapple",
           "children": [
             {
-              "word": "matriculated",
+              "word": "banana",
               "children": []
             },
             {
-              "word": "attending",
+              "word": "lemon",
               "children": []
             },
             {
-              "word": "enrollment",
+              "word": "maraschino",
               "children": []
             },
             {
-              "word": "semesters",
+              "word": "lime",
               "children": []
             }
           ]
@@ -269,88 +261,84 @@
       ]
     },
     {
-      "word": "undergrad",
+      "word": "blackberry",
       "children": [
         {
-          "word": "premed",
+          "word": "hackberry",
           "children": [
             {
-              "word": "dietetics",
+              "word": "whortleberry",
               "children": []
             },
             {
-              "word": "minoring",
+              "word": "juneberry",
               "children": []
             },
             {
-              "word": "gpa",
+              "word": "partridgeberry",
               "children": []
             },
             {
-              "word": "flunking",
+              "word": "bitternut",
               "children": []
             }
           ]
         },
         {
-          "word": "profs",
+          "word": "inkberry",
           "children": [
             {
-              "word": "lecturers",
+              "word": "snapple",
               "children": []
             },
             {
-              "word": "faculty",
+              "word": "cherimoya",
               "children": []
             },
             {
-              "word": "univs",
+              "word": "starfruit",
               "children": []
             },
             {
-              "word": "alumnis",
+              "word": "cumquat",
               "children": []
             }
           ]
         },
         {
-          "word": "postdocs",
+          "word": "acer",
           "children": [
             {
-              "word": "professorships",
+              "word": "laptop",
               "children": []
             },
             {
-              "word": "interns",
+              "word": "ibm",
               "children": []
             },
             {
-              "word": "fellowships",
-              "children": []
-            },
-            {
-              "word": "stipends",
+              "word": "intel",
               "children": []
             }
           ]
         },
         {
-          "word": "majored",
+          "word": "loganberry",
           "children": [
             {
-              "word": "minored",
+              "word": "lingonberry",
               "children": []
             },
             {
-              "word": "excelled",
+              "word": "gooseberry",
               "children": []
             },
             {
-              "word": "studying",
+              "word": "pawpaws",
               "children": []
             },
             {
-              "word": "flunked",
+              "word": "cranberrys",
               "children": []
             }
           ]
