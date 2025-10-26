@@ -395,7 +395,7 @@ function getRandomFloat(min, max) {
 
 // --- UPDATED createTextSprite FUNCTION ---
 function createTextSprite(text, opts = {}) {
-  const fontSize = opts.fontSize || 32;
+  const fontSize = opts.fontSize || 18;
   const font = `${fontSize}px Inter, Arial`;
   const padding = opts.padding || 8;
   const bg = opts.bg || 'rgba(0,0,0,0.6)';
@@ -509,7 +509,7 @@ class VisualizedWordNode {
     scene.add(glowMesh);
 
     // --- Text label ---
-    this.label = createTextSprite(word, { fontSize: 32, scale: 0.0006 });
+    this.label = createTextSprite(word, { fontSize: 18, scale: 0.0006 });
     this.label.position.set(position[0], position[1] + 0.8, position[2]);
     scene.add(this.label);
 
