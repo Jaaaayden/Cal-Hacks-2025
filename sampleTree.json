@@ -1,0 +1,67 @@
+{
+  "Id": 1,
+  "word": "A",
+  "children": [
+    {
+      "Id": 2,
+      "word": "B",
+      "children": [
+        {
+          "Id": 10,
+          "word": "J",
+          "children": [
+            { "Id": 100, "word": "U" },
+            { "Id": 101, "word": "V" },
+            { "Id": 102, "word": "W" }
+          ]
+        },
+        { "Id": 11, "word": "K" },
+        {
+          "Id": 12,
+          "word": "L",
+          "children": [
+            { "Id": 103, "word": "X" },
+            { "Id": 104, "word": "Y" },
+            { "Id": 105, "word": "Z" }
+          ]
+        },
+        { "Id": 13, "word": "M" }
+      ]
+    },
+    {
+      "Id": 3,
+      "word": "C",
+      "children": [
+        { "Id": 14, "word": "N" },
+        { "Id": 15, "word": "O" },
+        { "Id": 16, "word": "P" },
+        { "Id": 17, "word": "Q" }
+      ]
+    },
+    {
+      "Id": 4,
+      "word": "D",
+      "children": [
+        {
+          "Id": 18,
+          "word": "R",
+          "children": [
+            { "Id": 106, "word": "AA" },
+            { "Id": 107, "word": "AB" }
+          ]
+        },
+        {
+          "Id": 19,
+          "word": "S",
+          "children": [
+            { "Id": 108, "word": "AC" },
+            { "Id": 109, "word": "AD" },
+            { "Id": 110, "word": "AE" }
+          ]
+        },
+        { "Id": 20, "word": "T" }
+      ]
+    },
+    { "Id": 5, "word": "E" }
+  ]
+}
