@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   console.log(`Received word from URL: ${word}. Loading sample tree.`);
   const loadingText = loadingOverlay.querySelector('p');
   if (loadingText) {
-    loadingText.textContent = `Loading sample tree...`;
+    loadingText.textContent = `Loading tree...`;
   }
 
   try {
@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       throw new Error(`Could not load sampleTree.json: ${res.statusText}`);
     }
     const treeData = await res.json();
-    console.log('Loaded sampleTree.json data:', treeData);
+    console.log('Loaded trees.json data:', treeData);
 
     initTree(treeData);
 
