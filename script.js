@@ -3,6 +3,9 @@ import { OrbitControls } from 'https://unpkg.com/three@0.152.2/examples/jsm/cont
 
 const wordForm = document.getElementById('word-form');
 const wordInput = document.getElementById('word-input');
+const mainContainer = document.querySelector('.container');
+const loadingOverlay = document.getElementById('loading-overlay');
+const sceneContainer = document.getElementById('scene-container'); // ✅ Select the new container
 
 
 //get float in range

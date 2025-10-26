@@ -17,20 +17,29 @@
     </script>
 </head>
 <body>
+
+    <div id="loading-overlay" class="hidden">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
     <main class="container">
         <div class="content">
             <h1 class="title">Tree Generator</h1>
             <p class="description">Enter a `word to generate an interactive, 3D tree of related concepts.</p>
         </div>
-
         <div class="input-container">
             <form id="word-form">
                 <input type="text" id="word-input" placeholder="Enter a word..." required autofocus>
-                </form>
+            </form>
         </div>
     </main>
 
-    <!-- Load your script as a module so dynamic imports and import map resolution work -->
-    <script type="module" src="script.js"></script>
+    <div id="scene-container" class="hidden">
+        <p>The 3D tree would be rendered here.</p>
+    </div>
+
+    <script src="script.js"></script>
+
 </body>
 </html>
