@@ -438,83 +438,83 @@ function roundRect(ctx, x, y, w, h, r) {
 }
 
 class VisualizedWordNode {
-  constructor(word, scene, position = [0, 0, 0]) {
-    this.word = word;
-    this.position = position;
-
-    const outerRadius = 0.35;   // neon ring outer radius
-    const innerRadius = 0.30;   // neon ring inner radius (thin)
-    const segments = 64;
-
-    // --- Interior circle (dark green center) ---
-    // Use MeshStandardMaterial so `.emissive` exists for highlighting
-    const circleGeo = new THREE.CircleGeometry(innerRadius, segments);
-    const circleMat = new THREE.MeshStandardMaterial({
-      color: 0x003300,       // dark green
-      emissive: 0x000000,
-      emissiveIntensity: 1.0,
-      side: THREE.DoubleSide,
-      transparent: false,
-      depthWrite: true
-    });
-    const circleMesh = new THREE.Mesh(circleGeo, circleMat);
-    circleMesh.position.set(...position);
-    circleMesh.renderOrder = 0;
-    circleMesh.onBeforeRender = (renderer, scene, camera) => {
-      circleMesh.quaternion.copy(camera.quaternion);
-    };
-    scene.add(circleMesh);
-
-    // --- Thin neon ring (no additive blending) ---
-    const ringGeo = new THREE.RingGeometry(innerRadius, outerRadius, segments);
-    const ringMat = new THREE.MeshBasicMaterial({
-      color: 0x00ff66,       // neon green
-      side: THREE.DoubleSide,
-      transparent: true,
-      opacity: 0.8            // controls glow intensity
-    });
-    const ringMesh = new THREE.Mesh(ringGeo, ringMat);
-    ringMesh.position.set(...position);
-    ringMesh.renderOrder = 1;
-    ringMesh.onBeforeRender = (renderer, scene, camera) => {
-      ringMesh.quaternion.copy(camera.quaternion);
-    };
-    scene.add(ringMesh);
-
-    // --- Outer subtle glow (additive blending) ---
-    const glowGeo = new THREE.RingGeometry(outerRadius, outerRadius + 0.05, segments);
-    const glowMat = new THREE.MeshBasicMaterial({
-      color: 0x00ff66,
-      side: THREE.DoubleSide,
-      transparent: true,
-      blending: THREE.AdditiveBlending,
-      opacity: 0.3
-    });
-    const glowMesh = new THREE.Mesh(glowGeo, glowMat);
-    glowMesh.position.set(...position);
-    glowMesh.renderOrder = 2;
-    glowMesh.onBeforeRender = (renderer, scene, camera) => {
-      glowMesh.quaternion.copy(camera.quaternion);
-    };
-    scene.add(glowMesh);
-
-    // --- Text label ---
-    this.label = createTextSprite(word, { fontSize: 32, scale: 0.0006 });
-    this.label.position.set(position[0], position[1] + 0.8, position[2]);
-    scene.add(this.label);
-
-    // Use the main circle mesh as the interactive object
-    this.sphere = circleMesh;
-    NodesList.push(this.sphere); // Add to global NodesList for interaction
-
-    this._scene = scene;
-  }
-        // --- Text label ---
-        this.label = createTextSprite(word, { fontSize: 26, scale: 0.0004});
-        this.label.position.set(position[0], position[1] + 0.8, position[2]);
-        scene.add(this.label);
+    constructor(word, scene, position = [0, 0, 0]) {
+      this.word = word;
+      this.position = position;
+  
+      const outerRadius = 0.35;
+      const innerRadius = 0.30;
+      const segments = 64;
+  
+      // --- Interior circle (dark green center) ---
+      // Use Standard so emissive is available
+      const circleGeo = new THREE.CircleGeometry(innerRadius, segments);
+      const circleMat = new THREE.MeshStandardMaterial({
+        color: 0x003300,
+        emissive: 0x000000,
+        emissiveIntensity: 1.0,
+        side: THREE.DoubleSide,
+        transparent: false,
+        depthWrite: true,
+      });
+      const circleMesh = new THREE.Mesh(circleGeo, circleMat);
+      circleMesh.position.set(...position);
+      circleMesh.renderOrder = 0;
+      circleMesh.onBeforeRender = (_renderer, _scene, camera) => {
+        circleMesh.quaternion.copy(camera.quaternion);
+      };
+      scene.add(circleMesh);
+  
+      // --- Thin neon ring (no additive blending) ---
+      const ringGeo = new THREE.RingGeometry(innerRadius, outerRadius, segments);
+      const ringMat = new THREE.MeshBasicMaterial({
+        color: 0x00ff66,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.8,
+      });
+      const ringMesh = new THREE.Mesh(ringGeo, ringMat);
+      ringMesh.position.set(...position);
+      ringMesh.renderOrder = 1;
+      ringMesh.onBeforeRender = (_renderer, _scene, camera) => {
+        ringMesh.quaternion.copy(camera.quaternion);
+      };
+      scene.add(ringMesh);
+  
+      // --- Outer subtle glow (additive blending) ---
+      const glowGeo = new THREE.RingGeometry(outerRadius, outerRadius + 0.05, segments);
+      const glowMat = new THREE.MeshBasicMaterial({
+        color: 0x00ff66,
+        side: THREE.DoubleSide,
+        transparent: true,
+        blending: THREE.AdditiveBlending,
+        opacity: 0.3,
+      });
+      const glowMesh = new THREE.Mesh(glowGeo, glowMat);
+      glowMesh.position.set(...position);
+      glowMesh.renderOrder = 2;
+      glowMesh.onBeforeRender = (_renderer, _scene, camera) => {
+        glowMesh.quaternion.copy(camera.quaternion);
+      };
+      scene.add(glowMesh);
+  
+      // --- Text label ---
+      this.label = createTextSprite(word, { fontSize: 32, scale: 0.0006 });
+      this.label.position.set(position[0], position[1] + 0.8, position[2]);
+      scene.add(this.label);
+  
+      // Interactive target
+      this.sphere = circleMesh;
+  
+      // Optional: add to global list if it exists
+      if (typeof NodesList !== 'undefined' && Array.isArray(NodesList)) {
+        NodesList.push(this.sphere);
+      }
+  
+      this._scene = scene;
     }
-}
+  }
+  
 
 class VisualizedBranch {
   constructor(startPos, endPos, scene) {
