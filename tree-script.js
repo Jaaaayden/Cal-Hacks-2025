@@ -55,9 +55,11 @@ const MIN_GLOBAL_DIST = 1.25; // world units (tweak as needed)
 const MIN_GLOBAL_DIST_SQ = MIN_GLOBAL_DIST * MIN_GLOBAL_DIST;
 const GLOBAL_INDEX = new SpatialHash(MIN_GLOBAL_DIST);
 
+//raycasting global variables
 let NodesList = [];
 const raycaster = new THREE.Raycaster();
 const mouse = new THREE.Vector2();
+
 // --- Main Execution ---
 //materials
 
@@ -161,14 +163,10 @@ function initTree(treeData) {
         scene.background = new THREE.Color(0x121212);
         camera = new THREE.PerspectiveCamera(50, 2, 0.1, 1000);
         camera.position.set(0, 5, 30);
-    scene = new THREE.Scene();
-    scene.background = new THREE.Color(0x121212);
-    camera = new THREE.PerspectiveCamera(50, 2, 0.1, 1000); // temp aspect
-    camera.position.set(0, 5, 30);
 
-    renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    sceneContainer.appendChild(renderer.domElement);
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+        sceneContainer.appendChild(renderer.domElement);
 
         const ambient = new THREE.AmbientLight(0xffffff, 0.8);
         scene.add(ambient);
@@ -187,14 +185,14 @@ function initTree(treeData) {
         );
         composer.addPass(bloomPass);
 
-    controls = new OrbitControls(camera, renderer.domElement);
-    controls.enableDamping = true;
-    controls.minDistance = 2.0;
-    controls.maxDistance = 50.0;
+        controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.minDistance = 2.0;
+        controls.maxDistance = 50.0;
 
-    renderTree(treeData, scene);
+        renderTree(treeData, scene);
 
-    sceneContainer.classList.remove('hidden');
+        sceneContainer.classList.remove('hidden');
 
         // Initialize mouse and ray casting
 
@@ -248,12 +246,13 @@ function onMouseMove(event) {
   mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
   mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
 }
+
 function checkIntersects(onClick) {
   raycaster.setFromCamera(mouse, camera);
   //const arrow = new THREE.ArrowHelper(raycaster.ray.direction, raycaster.ray.origin, 5, 0xff0000);
   //scene.add(arrow);
   // Assuming `objects` is an array of your clickable meshes
-  const intersects = raycaster.intersectObjects(NodesList, true);
+  const intersects = raycaster.intersectObjects(NodesList);
 
   if (intersects.length > 0) {
     const firstObject = intersects[0].object;
@@ -443,13 +442,29 @@ class VisualizedWordNode {
             glowMesh.quaternion.copy(camera.quaternion);
         };
         scene.add(glowMesh);
+        //HIT BOX FOR RAYCASTING
+        /*const hitboxRadius = outerRadius + 0.05; // slightly larger than glow
+        this.hitboxGeo = new THREE.SphereGeometry(hitboxRadius, 16, 16);
+        this.hitboxMat = new THREE.MeshBasicMaterial({
+            color: 0x00ff00,       // optional (for debugging)
+            transparent: true,
+            opacity: 1.0,          // fully transparent (still raycastable)
+            depthWrite: false,      // so it doesn’t interfere with depth buffer
+            emissive: new THREE.Color(0x00ff00)
+        });
 
+        this.hitboxMesh = new THREE.Mesh(this.hitboxGeo, this.hitboxMat);
+        this.hitboxMesh.position.set(...position);
+        this.hitboxMesh.renderOrder = 0; // ensure it doesn't interfere visually
+        
+        scene.add(this.hitboxMesh);*/
         // --- Text label ---
         this.label = createTextSprite(word, { fontSize: 32, scale: 0.0006 });
         this.label.position.set(position[0], position[1] + 0.8, position[2]);
         scene.add(this.label);
         this._scene = scene;
-        NodesList.push(this.sphere); // Add to global NodesList for interaction
+        console.log(this.hitboxMesh)
+        //NodesList.push(glowMesh); // Add to global NodesList for interaction
     }
 }
 
