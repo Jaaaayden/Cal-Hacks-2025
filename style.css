@@ -183,8 +183,8 @@ body, html {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: #9747ff;
-    box-shadow: 0 0 10px #9747ff88;
+    background: #845929;
+    box-shadow: 0 0 10px #d89e3b88;
     flex-shrink: 0;
   }
   
