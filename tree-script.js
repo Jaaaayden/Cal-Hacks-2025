@@ -10,12 +10,14 @@ let renderer, camera, controls, scene;
 const loadingOverlay = document.getElementById('loading-overlay');
 const sceneContainer = document.getElementById('scene-container');
 
-
+let NodesList = [];
+const raycaster = new THREE.Raycaster();
+const mouse = new THREE.Vector2();
 // --- Main Execution ---
 // ... (rest of main execution logic) ...
 document.addEventListener('DOMContentLoaded', async () => {
     // ... (logic to get word and fetch data) ...
-    const urlParams = new URLSearchParams(window.location.search);
+    const   urlParams = new URLSearchParams(window.location.search);
     const word = urlParams.get('word') || 'sample';
 
     if (!word) {
@@ -97,22 +99,30 @@ function initTree(treeData) {
 
         sceneContainer.classList.remove('hidden');
 
-        requestAnimationFrame(() => {
+        // Initialize mouse and ray casting
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Dynamic sizing (safe to do here)
             const w = Math.max(1, sceneContainer.clientWidth || Math.floor(window.innerWidth * 0.75));
             const h = Math.max(1, sceneContainer.clientHeight || Math.floor(window.innerHeight * 0.75));
 
             camera.aspect = w / h;
             camera.updateProjectionMatrix();
             renderer.setSize(w, h, false);
+
+            // Update controls (for moving camera)
             controls.update();
 
-            if (loadingOverlay) loadingOverlay.classList.add('hidden');
-
-            requestAnimationFrame(() => { if(renderer) renderer.render(scene, camera) });
-            setTimeout(() => { if (renderer) renderer.render(scene, camera); }, 60);
-
-            animate();
-        });
+            // Update raycasting (hover or click logic)
+            raycaster.setFromCamera(mouse, camera);
+            checkIntersects(false);
+            
+            // Finally, render
+            renderer.render(scene, camera);
+        }
+        animate(); 
 
     } catch (err) {
         console.error('Failed to initialize three.js scene:', err);
@@ -122,6 +132,62 @@ function initTree(treeData) {
     }
 }
 
+// mouse tracking event and pos
+window.addEventListener('mousemove', onMouseMove);
+window.addEventListener('click', onMouseClick);
+
+function onMouseMove(event) {
+  const rect = renderer.domElement.getBoundingClientRect();
+
+  mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+  mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+}
+function checkIntersects(onClick) {
+  raycaster.setFromCamera(mouse, camera);
+  //const arrow = new THREE.ArrowHelper(raycaster.ray.direction, raycaster.ray.origin, 5, 0xff0000);
+  //scene.add(arrow);
+  // Assuming `objects` is an array of your clickable meshes
+  const intersects = raycaster.intersectObjects(NodesList, true);
+
+  if (intersects.length > 0) {
+    const firstObject = intersects[0].object;
+
+    if (onClick) {
+      // Handle click
+      console.log('Clicked on:', firstObject.name || firstObject);
+    } else {
+      // Handle hover
+      highlightObject(firstObject);
+    }
+  } else {
+    // Handle when not hovering any object
+    clearHighlight();
+  }
+}
+
+//highlight object
+let hoveredObject = null;
+
+function highlightObject(obj) {
+  if (hoveredObject !== obj) {
+    if (hoveredObject) hoveredObject.material.emissive.set(0x000000);
+    hoveredObject = obj;
+    hoveredObject.material.emissive.set(0x333333);
+  }
+}
+
+function clearHighlight() {
+  if (hoveredObject) hoveredObject.material.emissive.set(0x000000);
+  hoveredObject = null;
+}
+
+function onMouseClick(event) {
+  // Same normalization if you want to raycast on click
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+  checkIntersects(true); // true means "on click"
+}
 
 // --- Handle window resizing ---
 // ... (resize listener remains the same) ...
@@ -137,14 +203,7 @@ window.addEventListener('resize', () => {
     }
 });
 
-// --- Animation loop ---
-// ... (animate function remains the same) ...
-function animate() {
-    if (!renderer || !scene || !camera || !controls) return;
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-}
+
 
 // --- RENDER TREE ---
 // ... (renderTree function remains the same) ...
@@ -245,6 +304,7 @@ class VisualizedWordNode {
         this.label.position.set(position[0], position[1] + 0.7, position[2]);
         scene.add(this.label);
         this._scene = scene;
+        NodesList.push(this.sphere); // Add to global NodesList for interaction
     }
 }
 
