@@ -8,7 +8,8 @@ import { UnrealBloomPass } from "https://esm.sh/three@0.169.0/examples/jsm/postp
 
 // --- Global Variables ---
 let renderer, camera, controls, scene, composer;
-
+let wordToVisualizedNode = {};
+let circleMeshToWord = {};
 // --- Get HTML Elements ---
 const loadingOverlay = document.getElementById('loading-overlay');
 const sceneContainer = document.getElementById('scene-container');
@@ -349,7 +350,7 @@ window.addEventListener('resize', () => {
 function renderTree(treeNode, scene, position = [0, 0, 0], depth = 0, prevPos = null) {
   if (!treeNode || !treeNode.word) return;
 
-  new VisualizedWordNode(treeNode.word, scene, position);
+  new VisualizedWordNode(treeNode.word, scene, position, treeNode.children);
 
   const children = Array.isArray(treeNode.children) ? treeNode.children : [];
   if (children.length === 0) return;
@@ -421,9 +422,10 @@ function roundRect(ctx, x, y, w, h, r) {
 }
 
 class VisualizedWordNode {
-  constructor(word, scene, position = [0, 0, 0]) {
+  constructor(word, scene, position = [0, 0, 0], children) {
     this.word = word;
     this.position = position;
+    this.children = children;
 
     const outerRadius = 0.35;   // neon ring outer radius
     const innerRadius = 0.30;   // neon ring inner radius (thin)
@@ -489,7 +491,9 @@ class VisualizedWordNode {
     // Use the main circle mesh as the interactive object
     this.sphere = circleMesh;
     NodesList.push(this.sphere); // Add to global NodesList for interaction
-
+    wordToVisualizedNode[word] = this;
+    circleMeshToWord[circleMesh] = word;
+    
     this._scene = scene;
   }
 }
