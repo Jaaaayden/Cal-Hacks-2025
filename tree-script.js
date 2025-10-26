@@ -546,7 +546,7 @@ class VisualizedWordNode {
         scene.add(this.sphere);
         this.label = createTextSprite(word);
         this.label.position.set(position[0], position[1] + 0.7, position[2]);
-        scene.add(this.label);
+        //scene.add(this.label);
         this._scene = scene;
     }
 }
@@ -562,7 +562,7 @@ class VisualizedBranch {
 }
 
 // --- ✅ THIS IS THE OLD POSITION GENERATOR FUNCTION (RESTORED) ---
-function* generateNextPosition(parentPos, parentDepth, totalChildren) {
+/*function* generateNextPosition(parentPos, parentDepth, totalChildren) {
     let yOffset = 0.0;
     let xOffset = 0.0;
     let zOffset = 0.0;
@@ -613,5 +613,121 @@ function* generateNextPosition(parentPos, parentDepth, totalChildren) {
         }
         yield [parentPos[0] + xOffset, parentPos[1] + yOffset, parentPos[2] + zOffset];
     }
+}*/
+
+function* generateNextPosition(parentPos, parentDepth, totalChildren) {
+    // --- CONFIGURATION ---
+    const ANGLE_JITTER = 0.2;  // Small randomness to break symmetry
+
+    // Helper for randomness
+    const rand = (min, max) => Math.random() * (max - min) + min;
+
+    // --- Depth 1 (Root Node) ---
+    if (parentDepth === 0) {
+        const TAU = Math.PI * 2; // Full circle in radians
+
+        for (let i = 0; i < totalChildren; i++) {
+            // Evenly distribute children across the full circle (no randomness in angle)
+            const angle = (i / totalChildren) * TAU;  // Evenly spaced angle
+            const distance = rand(0.7, 1.2);  // Small outward spread
+            const xOffset = Math.cos(angle) * distance;
+            const zOffset = Math.sin(angle) * distance;
+            const yOffset = rand(3.5, 4.0);  // Significant upward movement
+
+            const newPos = [
+                parentPos[0] + xOffset,
+                parentPos[1] + yOffset,
+                parentPos[2] + zOffset
+            ];
+            yield newPos;
+        }
+    } 
+
+    // --- Depth 1 (First Layer of Branches in a Quarter Hemisphere) ---
+    if (parentDepth === 1) {
+        const baseAngle = Math.atan2(parentPos[2], parentPos[0]);
+        const maxAzimuthAngle = Math.PI ; // 90 degrees spread for azimuth
+        const maxElevationAngle = Math.PI / 2; // 45 degrees spread for elevation (upward)
+
+        for (let i = 0; i < totalChildren; i++) {
+            // Randomly select an azimuthal angle (0 to π/2) and elevation angle (0 to π/4)
+            const azimuthAngle =  rand(0, maxAzimuthAngle);  // Azimuth angle (horizontal plane)
+            const elevationAngle = rand(0, maxElevationAngle);  // Elevation angle (vertical direction)
+
+            // Apply jitter to the azimuth to introduce slight randomness
+            const angle = baseAngle + azimuthAngle + rand(-ANGLE_JITTER, ANGLE_JITTER);
+
+            // Compute spherical coordinates (r, θ, φ)
+            const distance = rand(2.5, 3.0);  // Spread the children further out from the parent
+            const xOffset = Math.cos(elevationAngle) * Math.cos(angle) * distance;
+            const zOffset = Math.cos(elevationAngle) * Math.sin(angle) * distance;
+            const yOffset = Math.sin(elevationAngle) * distance;  // Y offset controlled by elevation
+
+            // Generate the new position
+            const newPos = [
+                parentPos[0] + xOffset,
+                parentPos[1] + yOffset,
+                parentPos[2] + zOffset
+            ];
+            yield newPos;
+        }
+    }
+
+    // --- Depth 3 and Beyond (Continued Expansion) ---
+    /*if (parentDepth >= 2) {
+        const baseAngle = Math.atan2(parentPos[2], parentPos[0]);
+        const spreadAngle = Math.PI / 2;  // 90-degree spread for branches
+
+        for (let i = 0; i < totalChildren; i++) {
+            // Spread positions evenly within 90 degrees of the parent's base angle
+            const angle = baseAngle - spreadAngle / 2 + (i / (totalChildren - 1)) * spreadAngle + rand(-ANGLE_JITTER, ANGLE_JITTER);
+            const distance = rand(1.5, 2.5);  // Continue expanding outward
+            const xOffset = Math.cos(angle) * distance;
+            const zOffset = Math.sin(angle) * distance;
+
+            // Randomize the Y offset: up or down depending on the depth
+            const yOffset = rand(-0.5, 0.5);  // Can go up or down
+
+            const newPos = [
+                parentPos[0] + xOffset,
+                parentPos[1] + yOffset,
+                parentPos[2] + zOffset
+            ];
+            yield newPos;
+        }
+    }
+    */
+     if (parentDepth >= 2) {
+        // Calculate the vector from the parent to the grandparent
+        const parentToGrandparentX = parentPos[0];
+        const parentToGrandparentZ = parentPos[2];
+        const parentAngle = Math.atan2(parentToGrandparentZ, parentToGrandparentX);
+
+        // Set a restriction angle range (no backward movement)
+        const restrictedAngleRange = Math.PI;  // No more than 180 degrees in reverse direction
+
+        for (let i = 0; i < totalChildren; i++) {
+            // Random angle within a restricted range: forward or sideways, but not backward
+            const angle = rand(parentAngle - restrictedAngleRange / 2, parentAngle + restrictedAngleRange / 2);
+
+            // Random distance
+            const distance = rand(1.5, 3.0);  // Further expansion in all directions
+            const xOffset = Math.cos(angle) * distance;
+            const zOffset = Math.sin(angle) * distance;
+
+            // Drastic Y offset: large up/down movement for more erratic growth
+            const yOffset = rand(-3.0, 3.0);  // Large randomness in vertical direction
+
+            const newPos = [
+                parentPos[0] + xOffset,
+                parentPos[1] + yOffset,
+                parentPos[2] + zOffset
+            ];
+
+            // Yield the position directly (no overlap check)
+            yield newPos;
+        }
+    }
 }
-*/
+
+
