@@ -433,7 +433,7 @@ async def run_in_code(word: str):
     """
     Edit these values to run directly from code (no CLI).
     """
-    KV_PATH   = "/Users/justinsato/Documents/GitHub/Cal-Hacks-2025/lexvec_300d.kv"
+    KV_PATH   = "lexvec_300d.kv"
     ROOTS     = word # <- any string
     DEPTH     = 4
     BREADTH   = 4
