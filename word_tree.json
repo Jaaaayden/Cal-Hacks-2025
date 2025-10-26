@@ -1,0 +1,117 @@
+{
+  "Id": 1,
+  "word": "king",
+  "children": [
+    {
+      "Id": 2,
+      "word": "kings",
+      "children": [
+        {
+          "Id": 3,
+          "word": "princes",
+          "children": [
+            {
+              "Id": 4,
+              "word": "prince",
+              "children": [
+                {
+                  "Id": 5,
+                  "word": "monarch",
+                  "children": []
+                },
+                {
+                  "Id": 6,
+                  "word": "princess",
+                  "children": []
+                },
+                {
+                  "Id": 7,
+                  "word": "royal",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "Id": 8,
+              "word": "royals",
+              "children": [
+                {
+                  "Id": 9,
+                  "word": "monarchs",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": 10,
+          "word": "queen",
+          "children": [
+            {
+              "Id": 11,
+              "word": "queens",
+              "children": [
+                {
+                  "Id": 12,
+                  "word": "Senti_pocket",
+                  "children": []
+                },
+                {
+                  "Id": 13,
+                  "word": "princesses",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "Id": 14,
+      "word": "crown_prince",
+      "children": [
+        {
+          "Id": 15,
+          "word": "Crown_Prince",
+          "children": [
+            {
+              "Id": 16,
+              "word": "His_Majesty",
+              "children": [
+                {
+                  "Id": 17,
+                  "word": "His_Royal_Highness",
+                  "children": []
+                },
+                {
+                  "Id": 18,
+                  "word": "His_Majesty_Sultan",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "Id": 19,
+          "word": "sultan",
+          "children": [
+            {
+              "Id": 20,
+              "word": "ruler",
+              "children": [
+                {
+                  "Id": 21,
+                  "word": "rulers",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
